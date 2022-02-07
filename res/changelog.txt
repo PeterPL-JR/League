@@ -1,0 +1,30 @@
+Version Name: Alpha 1.2
+Date of Version: ?
+
+!!!--- 	CHANGES TO MAKE ---!!!
+
+[News]
+-> Convert old versions of files to the newest
+-> Modify score labels in matches, add "keyReleased"
+-> Fix place in group, when all statistics are the same
+
+[Bug Fix]
+-> Fix the bug with winner on loading file
+-> Change Create Frame - add back export/import
+-> Sort teams-groups names (A1, B2) by knock-out
+-> Fix the bug with loading files
+-> Fix penalty frames on round of 16
+-> Fix division on final ranking table
+-> Fix all matches amount (4, not 3) on mode 12t/8k
+-> Close load frame after choose the loading old league
+
+[Next Version!!!]
+-> Add teams to total ranking (and formula to it)
+-> Not automatic drawing (player clicked and draw from pots)
+
+>>> News <<<
+-> You can play a game with Enter key & Arrows
+
+
+>>> Changes <<<
+-> Score of match can have only number from 0 to 9
