@@ -81,5 +81,11 @@ public class FlagsSheet {
 	public static void loadFlagsSheets() {
 		new FlagsSheet("europe", 11, 5);
 		new FlagsSheet("south_america", 5, 2);
+		
+		new FlagsSheet("oceania", 4, 2);
+		new FlagsSheet("north_america", 6, 4);
+		
+		new FlagsSheet("africa", 13, 4);
+		new FlagsSheet("asia", 11, 4);
 	}
 }

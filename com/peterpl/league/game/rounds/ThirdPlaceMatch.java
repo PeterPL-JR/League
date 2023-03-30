@@ -1,7 +1,5 @@
 package com.peterpl.league.game.rounds;
 
-import java.awt.*;
-
 import com.peterpl.league.*;
 import com.peterpl.league.game.gui.*;
 
@@ -9,7 +7,7 @@ public class ThirdPlaceMatch extends Knockout {
 	private static final long serialVersionUID = 1L;
 
 	public ThirdPlaceMatch() {
-		super("Third Place", 1, Header.Basic + 20);
+		super("Third Place", 1, 140, Header.Basic + 20, 1);
 		
 		for(int i = 0; i < matches.length; i++) {
 			for(int j = 0; j < 2; j++) {
@@ -20,9 +18,8 @@ public class ThirdPlaceMatch extends Knockout {
 		
 		for (int i = 0; i < matches.length; i++) {
 			matches[i].setLocation(matches[i].getX(), matches[i].getY() + 100);
-			matches[i].setDimension(140, new Font("Verdana", Font.PLAIN, 25));
 		}
-		
+		// font - 25;
 		logo.setLocation(logo.getX(), 30);
 	}
 	

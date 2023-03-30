@@ -3,6 +3,8 @@ package com.peterpl.league.files;
 import java.io.*;
 import java.util.*;
 
+import com.peterpl.league.methods.*;
+
 public class CountriesFileHandler {
 	
 	public static final String[] langs = { "en", "pl" };
@@ -15,6 +17,7 @@ public class CountriesFileHandler {
 	public String[] loadFile(String name, String lang) throws Exception {
 		
 		String fileName = "/data/countries_" + name + "_" + lang + ".dat";
+		
 		ObjectInputStream read = new ObjectInputStream(CountriesFileHandler.class.getResourceAsStream(fileName));
 		ArrayList<String> names = new ArrayList<>();
 
@@ -38,7 +41,9 @@ public class CountriesFileHandler {
 			for (String[] special : chars)
 				str = str.replaceAll(special[1], special[0]);
 			names.set(i, str);
+			Print.p(str);
 		}
+		Print.p();
 		
 		String[] namesArray = new String[names.size()];
 		for(int i = 0; i < namesArray.length; i++) {

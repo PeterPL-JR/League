@@ -13,8 +13,6 @@ public class ScoresDrawHandler {
 
 		for (int i = 0; i < groups.length; i++) {
 			for (int j = 0; j < 6; j++) {
-
-				//if(i == groups.length - 1 && j == 5) continue;
 				
 				Team team1 = League.allTeams[i][groups[i].matchesTable.getMatchTeam1(j)];
 				Team team2 = League.allTeams[i][groups[i].matchesTable.getMatchTeam2(j)];

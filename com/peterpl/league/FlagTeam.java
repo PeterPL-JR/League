@@ -8,7 +8,6 @@ import java.awt.image.*;
 import javax.swing.*;
 
 import com.peterpl.league.files.*;
-import com.peterpl.league.methods.*;
 
 public class FlagTeam {
 	public static ArrayList<FlagTeam> flags = new ArrayList<>();
@@ -22,10 +21,11 @@ public class FlagTeam {
 			new ExceptionFlag("Switzerland", 1.25), 
 			new ExceptionFlag("Denmark", 1.1),
 			new ExceptionFlag("Norway", 1.1), 
-			new ExceptionFlag("Iceland", 1.1),
+			new ExceptionFlag("Iceland", 1.12),
 			new ExceptionFlag("Faroe Islands", 1.1), 
 			new ExceptionFlag("Israel", 1.1),
 			new ExceptionFlag("San Marino", 1.1), 
+			new ExceptionFlag("Slovakia", 1.05), 
 		};
 		FlagTeam.exceptionFlags = exceptions;
 	}

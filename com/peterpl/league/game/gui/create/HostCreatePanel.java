@@ -52,7 +52,7 @@ public class HostCreatePanel extends JPanel {
 		hosts[1].setVisible(false);
 		
 		//
-		hosts[0].setText("Niemcy");
+		// hosts[0].setText("Katar");
 		//
 		
 		// Hosts Choose Box

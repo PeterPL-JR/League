@@ -13,7 +13,7 @@ import com.peterpl.league.methods.*;
 
 public class MatchesTable extends JPanel {
 	private static final long serialVersionUID = 1L;
-	public static final int FlagWidth = 31;
+	public static final int FlagWidth = 30;
 	public static final int FlagHeight = 20;
 	
 	public static ArrayList<FlagTeam> flagTeams = FlagTeam.getAllScaledFlags(FlagWidth, FlagHeight, true);

@@ -102,24 +102,25 @@ public class League {
 			public void run() {
 				FlagsSheet.loadFlagsSheets();
 				menuFrame.setVisible(true);
+
+				/*
 				menuFrame.startEvent();
 				createFrame.optionsCreate.setNamesMode(1);
 				
-				/*
-				createFrame.modeCreate.setTeamsMode(3);
+				createFrame.modeCreate.setTeamsMode(1);
 				createFrame.modeCreate.setKnockoutMode(0);
 				createFrame.buttonEvent();
-				
 				pots.buttonEvent();
 				groups.drawEvent();
 				groups.buttonEvent();
+				
 				League.drawingScores.createScores(groupRound);
+				League.drawingScores.createScores(secondRound);
 				League.gameFrame.setContentPane(quarterFinals);
 				//*/
 				
 				/*
 				
-				League.drawingScores.createScores(finalMatch);
 				League.gameFrame.setContentPane(knockout[knockout.length - 2]);
 				/*
 				*/

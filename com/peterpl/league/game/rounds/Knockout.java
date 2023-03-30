@@ -1,5 +1,7 @@
 package com.peterpl.league.game.rounds;
 
+import java.util.*;
+
 import java.awt.*;
 
 import com.peterpl.league.*;
@@ -9,6 +11,10 @@ import com.peterpl.league.methods.*;
 public abstract class Knockout extends GamePanel {
 	private static final long serialVersionUID = 1L;
 	
+	public static final int BasicFlagWidth = 30;
+	public static final int BasicFlagHeight = 20;
+	
+	public ArrayList<FlagTeam> flagTeams;;	
 	public final String name;
 	public final int matchesCount;
 	protected int match = 0;
@@ -19,15 +25,16 @@ public abstract class Knockout extends GamePanel {
 	public Team[] winners;
 	public Team[] losers;
 
-	public Knockout(String name, int matchesCount, int logoFontSize) {
+	public Knockout(String name, int matchesCount, int matchHeight, int logoFontSize, double flagScale) {
 		super(name, logoFontSize, GameFrame.Width, GameFrame.Height);
+		flagTeams = FlagTeam.getAllScaledFlags((int) (BasicFlagWidth * flagScale), (int) (BasicFlagHeight * flagScale), true);
 		
 		this.name = name;
 		this.matchesCount = matchesCount;
 
 		matches = new KnockoutMatch[matchesCount];
 		for (int i = 0; i < matchesCount; i++) {
-			matches[i] = new KnockoutMatch(this);
+			matches[i] = new KnockoutMatch(this, matchHeight);
 			matches[i].setLocation(Game.centerX(matches[i], this), 120 + i * (int) (matches[i].getHeight() * 1.15));
 			add(matches[i]);
 		}

@@ -1,7 +1,5 @@
 package com.peterpl.league.game.rounds;
 
-import java.awt.*;
-
 import com.peterpl.league.*;
 import com.peterpl.league.game.gui.*;
 
@@ -9,7 +7,7 @@ public class SemiFinals extends Knockout {
 	private static final long serialVersionUID = 1L;
 
 	public SemiFinals() {
-		super("Semi-Finals", 2, Header.Basic + 15);
+		super("Semi-Finals", 2, 120, Header.Basic + 15, 1);
 		
 		for(int i = 0; i < matches.length; i++) {
 			for(int j = 0; j < 2; j++) {
@@ -20,8 +18,8 @@ public class SemiFinals extends Knockout {
 		
 		for(int i = 0; i < matches.length; i++) {
 			matches[i].setLocation(matches[i].getX(), matches[i].getY() + 100 + 70 * i);
-			matches[i].setDimension(120, new Font("Verdana", Font.PLAIN, 22));
 		}
+		// font - 22;	
 	}
 
 	protected void setNextRoundTeams() {

@@ -146,10 +146,10 @@ public class LoadFrame extends JFrame {
 			checkedIndex = -1;
 		}
 
+		dispose();
 		if (checkedIndex != -1) {
 			League.createFrame.loadLeague(files[checkedIndex]);
 		}
-		dispose();
 	}
 
 	private void chooseButtonEvent() {
@@ -163,7 +163,7 @@ public class LoadFrame extends JFrame {
 
 		parentFrame.setEnabled(true);
 		dispose();
-
+		
 		if (checkedIndex != -1) {
 			League.filesHandler.exportFile(files[checkedIndex]);
 		}

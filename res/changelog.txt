@@ -3,28 +3,31 @@ Date of Version: ?
 
 !!!--- 	CHANGES TO MAKE ---!!!
 
-[News]
--> Convert old versions of files to the newest
--> Modify score labels in matches, add "keyReleased"
--> Fix place in group, when all statistics are the same
+[Nowości do zrobienia]
+-> Konwersja starych plików gry do nowych wersji
+-> Modyfikacja ScoreLabel, aby dodać "keyReleased"
+-> Ustalanie miejsca w grupie, gdy statystyki są takie same
+-> Stworzyć nowy mechanizm importu plików gry
+-> Jeszcze lepszy system grania za pomocą strzałek i Enter
 
-[Bug Fix]
--> Fix the bug with winner on loading file
--> Change Create Frame - add back export/import
--> Sort teams-groups names (A1, B2) by knock-out
--> Fix the bug with loading files
--> Fix penalty frames on round of 16
--> Fix division on final ranking table
--> Fix all matches amount (4, not 3) on mode 12t/8k
--> Close load frame after choose the loading old league
 
-[Next Version!!!]
--> Add teams to total ranking (and formula to it)
--> Not automatic drawing (player clicked and draw from pots)
+[Błędy do naprawienia]
+-> Przywrócić poprawne sortowanie w FinalRankingTable
+-> Dodać z powrotem do CreateFrame eksport/import plików
+-> Naprawić bug z pucharem przy ekranie wygranej
+-> Posortować drużyny w KnockoutMatch, według grup
+-> Naprawić ramki karnych przy SecondRound (1/8 finału)
+-> Przywrócić podział tabeli przy FinalRankingTable
+-> Naprawić błąd w przy trybie 12t/8k, aby były 4 mecze, nie 3
+
+
+[!!! KOLEJNA WERSJA !!!]
+-> Stworzyć Totalny Ranking, i wzór na niego, i dodawać drużyny
+-> Losowanie Przez Użytkownika, jako alternatywa dla automatycznego
+
 
 >>> News <<<
 -> You can play a game with Enter key & Arrows
-
 
 >>> Changes <<<
 -> Score of match can have only number from 0 to 9

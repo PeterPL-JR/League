@@ -1,7 +1,5 @@
 package com.peterpl.league.game.rounds;
 
-import java.awt.*;
-
 import com.peterpl.league.*;
 import com.peterpl.league.files.*;
 import com.peterpl.league.game.gui.*;
@@ -12,7 +10,7 @@ public class Final extends Knockout {
 	public final WinnerScreen winner;
 
 	public Final() {
-		super("Final", 1, Header.Basic + 30);
+		super("Final", 1, 140, Header.Basic + 30, 1);
 
 		for (int i = 0; i < matches.length; i++) {
 			for (int j = 0; j < 2; j++) {
@@ -23,8 +21,8 @@ public class Final extends Knockout {
 
 		for (int i = 0; i < matches.length; i++) {
 			matches[i].setLocation(matches[i].getX(), matches[i].getY() + 100);
-			matches[i].setDimension(140, new Font("Verdana", Font.PLAIN, 25));
 		}
+		// font - 25;
 
 		rightArrow.setVisible(false);
 		logo.setLocation(logo.getX(), 30);

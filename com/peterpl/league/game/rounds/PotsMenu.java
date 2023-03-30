@@ -33,26 +33,37 @@ public class PotsMenu extends GamePanel implements Serializable {
 			League.setupFrame.setGroups();
 		};
 
-		/*
-		String[] teams = { 
-			"", "Włochy", "Hiszpania", "Belgia", "Francja", "Anglia", "Portugalia", "Holandia", "Dania",
-			"Szwecja", "Polska", "Chorwacja", "Czechy", "Rosja", "Austria", "Turcja", "Ukraina", "Serbia",
-			"Szwajcaria", "Słowacja", "Węgry", "Walia", "Finlandia", "Grecja", "Szkocja", "Islandia",
-			"Macedonia","Rumunia", "Norwegia", "Albania", "Irlandia", "Słowenia", "Bułgaria", "Izrael"
-		};
+		// String euVictory = "Szkocja";
+		// String playOff1 = "Peru";
+		// String playOff2 = "Kostaryka";
+		
+		// //*
+		// String[] teams = {
+		// 	"Katar", "Brazylia", "Belgia", "Francja",
+		// 	"Argentyna", "Anglia", "Hiszpania", "Portugalia",
+			
+		// 	"Meksyk", "Holandia", "Dania", "Niemcy", 
+		// 	"Urugwaj", "Szwajcaria", "Stany Zjednoczone", "Chorwacja",
+			
+		// 	"Senegal", "Iran", "Japonia", "Maroko", 
+		// 	"Serbia", "Polska", "Korea Południowa", "Tunezja",
+			
+		// 	"Kamerun", "Kanada", "Ekwador", "Arabia Saudyjska", 
+		// 	"Ghana", euVictory, playOff1, playOff2
+		// };
 
-		String[][] pots = new String[League.teamsInGroup][League.groupsCount];
-		for (int i = 0; i < pots.length; i++) {
-			for (int j = 0; j < pots[i].length; j++) {
-				pots[i][j] = teams[j + i * pots[i].length];
-			}
-		}
+		// String[][] pots = new String[League.teamsInGroup][League.groupsCount];
+		// for (int i = 0; i < pots.length; i++) {
+		// 	for (int j = 0; j < pots[i].length; j++) {
+		// 		pots[i][j] = teams[j + i * pots[i].length];
+		// 	}
+		// }
 
-		for (int i = 0; i < League.teamsInGroup; i++) {
-			this.pots[i].setText(pots[i]);
-			this.pots[i].setTextEvents(this);
-		}
-		// */
+		// for (int i = 0; i < League.teamsInGroup; i++) {
+		// 	this.pots[i].setText(pots[i]);
+		// 	this.pots[i].setTextEvents(this);
+		// }
+		// // */
 	}
 
 	// TO PRIVATE

@@ -39,9 +39,6 @@ public class FinalRanking extends GamePanel {
 	}
 	
 	public void addTableDivide(int index) {
-		//for(int i = index; i < table.parts.length; i++) {
-			//table.parts[i].setLocation(table.parts[i].getX(), table.parts[i].getY() + 20);
-		//}
 		table.setSize(table.getWidth(), table.getHeight() + 20);
 		panel.setPreferredSize(new Dimension(table.getWidth(), table.getHeight()));
 	}

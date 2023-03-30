@@ -53,9 +53,9 @@ public class CreateFrame extends JFrame {
 		createLeagueName();
 
 		//
-		name.setText("League Version 2021");
-		modeCreate.setTeamsMode(3);
-		modeCreate.setKnockoutMode(1);
+		// name.setText("League Version 2021");
+		// modeCreate.setTeamsMode(3);
+		// modeCreate.setKnockoutMode(1);
 		//
 	}
 

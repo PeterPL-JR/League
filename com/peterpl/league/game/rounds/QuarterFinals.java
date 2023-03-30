@@ -1,7 +1,5 @@
 package com.peterpl.league.game.rounds;
 
-import java.awt.*;
-
 import com.peterpl.league.*;
 import com.peterpl.league.game.gui.*;
 
@@ -9,7 +7,7 @@ public class QuarterFinals extends Knockout {
 	private static final long serialVersionUID = 1L;
 	
 	public QuarterFinals() {
-		super("Quarter-Finals", 4, Header.Basic + 10);
+		super("Quarter-Finals", 4, 80, Header.Basic + 10, 1);
 
 		for (int i = 0; i < matches.length; i++) {
 			for (int j = 0; j < 2; j++) {
@@ -20,8 +18,8 @@ public class QuarterFinals extends Knockout {
 
 		for(int i = 0; i < matches.length; i++) {
 			matches[i].setLocation(matches[i].getX(), matches[i].getY() + 65 + 30 * i);
-			matches[i].setDimension(80, new Font("Verdana", Font.PLAIN, 20));
 		}
+		// font - 20;
 	}
 	
 	public void startRound() {
