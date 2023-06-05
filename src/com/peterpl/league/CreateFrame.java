@@ -51,12 +51,6 @@ public class CreateFrame extends JFrame {
 
 		createPanels();
 		createLeagueName();
-
-		//
-		// name.setText("League Version 2021");
-		// modeCreate.setTeamsMode(3);
-		// modeCreate.setKnockoutMode(1);
-		//
 	}
 
 	private void createLeagueName() {
@@ -97,12 +91,15 @@ public class CreateFrame extends JFrame {
 		optionsCreate.setLocation(0, 450);
 		add(optionsCreate);
 
-		// Options Create Panel
+		// Files Create Panel
 		filesCreate = new FilesCreatePanel();
-		filesCreate.setLocation(401, 450);
+		filesCreate.setLocation(401, 440);
 		add(filesCreate);
 	}
 
+	public void setNameText(String text) {
+		name.setText(text);
+	}
 	public String getNameText() {
 		return name.getText();
 	}
@@ -127,15 +124,5 @@ public class CreateFrame extends JFrame {
 		// Show Setup Frame
 		League.createFrame.dispose();
 		League.setupFrame.setVisible(true);
-	}
-
-	@SuppressWarnings("unused")
-	private void exportFileEvent() {
-		new LoadFrame(this, League.leagueFile.loadFiles(), "choose");
-	}
-
-	@SuppressWarnings("unused")
-	private void importFileEvent() {
-		League.filesHandler.importFile();
 	}
 }

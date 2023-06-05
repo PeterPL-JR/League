@@ -55,13 +55,12 @@ public class PenaltySquare extends ScoreSquare {
 	}
 	
 	private void createLabel() {
-		label.setBounds(0, 0, size, size);
-		label.setFont(textFont);
-		label.setHorizontalAlignment(SwingConstants.CENTER);
-		label.setOpaque(false);
-		label.setBorder(null);
-		label.setForeground(new Color(0x505050));
-		add(label);
+		setBounds(0, 0, size, size);
+		setFont(textFont);
+		setHorizontalAlignment(SwingConstants.CENTER);
+		setOpaque(false);
+		setBorder(null);
+		setForeground(new Color(0x505050));
 	}
 	
 	private void createBrackets() {

@@ -75,8 +75,6 @@ public class MenuFrame extends JFrame {
 	}
 	
 	private void optionsEvent() {
-		League.menuFrame.setVisible(false);
-		new OptionsFrame();
 	}
 	
 	private void quitEvent() {

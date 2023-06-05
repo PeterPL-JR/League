@@ -10,11 +10,11 @@ public class ExtraPlaces extends GamePanel {
 	public RankingTable table;
 	
 	public ExtraPlaces() {
-		super("3rd Places", Header.Basic, GameFrame.Width, GameFrame.Height);
+		super(createExtraName(), Header.Basic, GameFrame.Width, GameFrame.Height);
 		
 		table = new RankingTable(League.groupsCount);
 		table.setLocation(Game.centerX(table, this), 120);
-		table.setSize(table.getWidth(), League.groupsCount * 55 + 56);
+		table.setSize(table.getWidth(), League.groupsCount * 49 + 50);
 		add(table);
 
 		for(int i = 0; i < League.groupsCount; i++)
@@ -27,5 +27,14 @@ public class ExtraPlaces extends GamePanel {
 	public void setQualifiedTeams(int teams) {
 		for(int i = 0; i < teams; i++)
 			table.setRowColor(i, RankingTable.yellow);
+	}
+	
+	private static String createExtraName() {
+		int extraPlace = (League.teamsInKnockout - League.extraTeamsQualified) / League.groupsCount + 1;
+		String sign = "st";
+		if(extraPlace == 2) sign = "nd";
+		if(extraPlace == 3) sign = "rd";
+		
+		return extraPlace + sign + " Places";
 	}
 }

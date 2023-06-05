@@ -135,7 +135,9 @@ public class KnockoutMatch extends JPanel {
 		this.team[index].setText(team.name);
 
 		teams[index] = team;
-		FlagTeam.findCountry(team.name, flags[index], flagLabels[index], this, knockout.flagTeams);
+		if(League.flagsMode) {
+			FlagTeam.findCountry(team.name, flags[index], flagLabels[index], this, knockout.flagTeams);			
+		}
 	}
 
 	public void setText(int index, String text) {

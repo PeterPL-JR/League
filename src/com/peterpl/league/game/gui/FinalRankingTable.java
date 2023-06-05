@@ -16,11 +16,11 @@ public class FinalRankingTable extends RankingTable {
 	public FinalRankingTable() {
 		super(League.teamsCount);
 
-		//parts[0].place.setText(null);
-		//parts[1].place.setText(null);
+		rankingParts[0].place.setText("");
+		rankingParts[1].place.setText("");
 		
-		//parts[0].place.setIcon(GraphicsImage.placeGold);
-		//parts[1].place.setIcon(GraphicsImage.placeSilver);
+		rankingParts[0].place.setIcon(GraphicsImage.placeGold);
+		rankingParts[1].place.setIcon(GraphicsImage.placeSilver);
 		
 		setRowColor(0, gold);
 		setRowColor(1, silver);
@@ -42,12 +42,26 @@ public class FinalRankingTable extends RankingTable {
 	}
 	
 	public void thirdPlacesMatch(boolean bool) {
+		final int T_PLACE_X = 0;
+		final int T_PLACE_Y = 147;
+		
+		final int T_PLACE_WIDTH = 58;
+		final int T_PLACE_HEIGHT_1 = 50;
+		final int T_PLACE_HEIGHT_2 = 99;
+	
 		if(bool) {
-			thirdPlaces.setBounds(0, 157, 58, 52);
+			thirdPlaces.setBounds(T_PLACE_X, T_PLACE_Y, T_PLACE_WIDTH, T_PLACE_HEIGHT_1);
 			setRowColor(3, normal);
 		} else {
-			thirdPlaces.setBounds(0, 157, 58, 103);
+			thirdPlaces.setBounds(T_PLACE_X, T_PLACE_Y, T_PLACE_WIDTH, T_PLACE_HEIGHT_2);
 			setRowColor(3, brown);
 		}
+	}
+
+	public RankingTablePart getRankingPart(int index) {
+		return rankingParts[index];
+	}
+	public int getTableSize() {
+		return rankingParts.length;
 	}
 }

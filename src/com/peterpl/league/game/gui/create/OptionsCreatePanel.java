@@ -53,6 +53,9 @@ public class OptionsCreatePanel extends JPanel {
 	public void setNamesMode(int index) {
 		teamsChoose.setSelectedIndex(index);
 	}
+	public void setThirdPlaceMatch(boolean thirdPlace) {
+		matchSquare.setChecked(thirdPlace);
+	}
 	
 	public int getTeamsSelect() {
 		return teamsChoose.getSelectedIndex();

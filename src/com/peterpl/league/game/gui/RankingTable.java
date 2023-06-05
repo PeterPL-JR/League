@@ -52,6 +52,13 @@ public class RankingTable extends Table {
 		for(int i = 0; i < rankingParts.length; i++) {
 			rankingParts[i] = new RankingTablePart(i, parts[i + 1]);
 		}
+		
+		setBackground(normal);
+		setBorder(new LineBorder(Color.BLACK));
+		
+		for(int i = 0; i < rankingParts.length; i++) {
+			setRowColor(i, normal);
+		}
 	}
 
 	public void setRowColor(int index, Color color) {
@@ -102,7 +109,7 @@ public class RankingTable extends Table {
 		}
 	}
 	
-	protected class RankingTablePart extends TablePart {
+	public class RankingTablePart extends TablePart {
 		private static final long serialVersionUID = 1L;
 		private final int placeIndex;
 		private TablePart thisPart;
@@ -110,7 +117,7 @@ public class RankingTable extends Table {
 		private JLabel flagLabel;
 		private FlagTeam flag;
 		
-		private JLabel place;
+		public JLabel place;
 		private JLabel team;
 		private JLabel[] stats;
 		
@@ -188,6 +195,17 @@ public class RankingTable extends Table {
 			if(League.flagsMode) {
 				FlagTeam.findCountry(team.name, flag, flagLabel, thisPart, flagTeams);
 			}
+		}
+		
+		public int getX() {
+			return thisPart.getX();
+		}
+		public int getY() {
+			return thisPart.getY();
+		}
+		
+		public void setLocation(int x, int y) {
+			thisPart.setLocation(x, y);
 		}
 	}
 }

@@ -3,6 +3,7 @@ package com.peterpl.league.game.gui;
 import javax.swing.*;
 import javax.swing.border.*;
 
+import com.peterpl.league.files.*;
 import com.peterpl.league.methods.*;
 
 import java.awt.Color;
@@ -36,7 +37,7 @@ public class WinnerScreen extends JPanel {
 	}
 	
 	private void create() {
-		cup = new JLabel();
+		cup = new JLabel(GraphicsImage.cup);
 		cup.setSize(185, 185);
 		cup.setLocation(Game.centerX(cup, this), 66);
 		add(cup);

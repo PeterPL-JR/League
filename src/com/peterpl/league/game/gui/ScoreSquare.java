@@ -8,9 +8,8 @@ import javax.swing.border.*;
 
 import com.peterpl.league.methods.*;
 
-public class ScoreSquare extends JPanel {
+public class ScoreSquare extends JTextField {
 	private static final long serialVersionUID = 1L;
-	protected JLabel label;
 	
 	protected boolean active = false;
 	protected boolean focused = false;
@@ -58,15 +57,10 @@ public class ScoreSquare extends JPanel {
 	}
 
 	protected void create() {
-		label = new JLabel();
-		label.setBounds(0, 0, 25, 25);
-		label.setFont(new Font("Verdana", Font.PLAIN, 14));
-		label.setHorizontalAlignment(SwingConstants.CENTER);
-
 		setSize(25, 25);
+		setFont(new Font("Verdana", Font.PLAIN, 15));
+		setHorizontalAlignment(SwingConstants.CENTER);
 		setBorder(normalBorder);
-		setLayout(null);
-		add(label);
 
 		enterKeyEvent = () -> {};
 		leftEvent = () -> {};
@@ -79,22 +73,16 @@ public class ScoreSquare extends JPanel {
 			public void keyPressed(KeyEvent e) {
 				if (!active) return;
 
-				boolean digit = Character.isDigit(e.getKeyChar());
-				if (digit) {
-					label.setText(e.getKeyChar() + "");
-				}
-
-				if (e.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
-					label.setText("");
-				}
 				if (e.getKeyCode() == KeyEvent.VK_ENTER) {
 					enterKeyEvent.event();
 				}
-				if (e.getKeyCode() == KeyEvent.VK_LEFT) {
+				else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
 					leftEvent.event();
 				}
-				if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
+				else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
 					rightEvent.event();
+				} else {
+					setText("");
 				}
 			}
 		};
@@ -120,7 +108,7 @@ public class ScoreSquare extends JPanel {
 					setSize(27, 27);
 
 					setLocation(getX() - 1, getY() - 1);
-					label.setSize(27, 27);
+					setSize(27, 27);
 					setBorder(focusBorder);
 				}
 			}
@@ -132,7 +120,7 @@ public class ScoreSquare extends JPanel {
 					setSize(25, 25);
 
 					setLocation(getX() + 1, getY() + 1);
-					label.setSize(25, 25);
+					setSize(25, 25);
 					setBorder(normalBorder);
 				}
 			}
@@ -140,11 +128,11 @@ public class ScoreSquare extends JPanel {
 	}
 
 	public void setScore(int score) {
-		label.setText(score + "");
+		setText(score + "");
 	}
 
 	public String getScore() {
-		return label.getText();
+		return getText();
 	}
 
 	public void setLeftEvent(ScoreSquare score) {
@@ -165,7 +153,6 @@ public class ScoreSquare extends JPanel {
 			setBorder(normalBorder);
 			if (focused) {
 				setSize(25, 25);
-				label.setSize(25, 25);
 				setLocation(getX() + 1, getY() + 1);
 			}
 		}

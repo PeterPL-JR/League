@@ -11,6 +11,7 @@ import com.peterpl.league.game.gui.*;
 
 public interface Game {
 
+	/** Function checking if a string is empty */
 	public static boolean isStringEmpty(String string) {
 		boolean empty = true;
 
@@ -24,6 +25,7 @@ public interface Game {
 		return empty;
 	}
 
+	/** Function checking if all elements of a 2D array are unique */
 	public static boolean isArrayUnique(String[] array) {
 		boolean unique = true;
 

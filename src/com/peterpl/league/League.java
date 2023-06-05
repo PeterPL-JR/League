@@ -6,6 +6,7 @@ import com.peterpl.league.files.*;
 import com.peterpl.league.game.*;
 import com.peterpl.league.game.knockout.*;
 import com.peterpl.league.game.rounds.*;
+import com.peterpl.league.methods.*;
 
 public class League {
 	public static final String title = "League";
@@ -106,7 +107,7 @@ public class League {
 				/*
 				menuFrame.startEvent();
 				createFrame.optionsCreate.setNamesMode(1);
-				
+
 				createFrame.modeCreate.setTeamsMode(1);
 				createFrame.modeCreate.setKnockoutMode(0);
 				createFrame.buttonEvent();
@@ -118,7 +119,7 @@ public class League {
 				League.drawingScores.createScores(secondRound);
 				League.gameFrame.setContentPane(quarterFinals);
 				//*/
-				
+
 				/*
 				
 				League.gameFrame.setContentPane(knockout[knockout.length - 2]);

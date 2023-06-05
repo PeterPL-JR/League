@@ -34,21 +34,23 @@ public class CountriesFileHandler {
 			names.add(str);
 		}
 		read.close();
-
-		for (int i = 0; i < names.size(); i++) {
-			String str = names.get(i);
-			
-			for (String[] special : chars)
-				str = str.replaceAll(special[1], special[0]);
-			names.set(i, str);
-			Print.p(str);
-		}
-		Print.p();
 		
 		String[] namesArray = new String[names.size()];
 		for(int i = 0; i < namesArray.length; i++) {
 			namesArray[i] = names.get(i);
 		}
 		return namesArray;
+	}
+	
+	private void printTeams(ArrayList<String> teamsNames) {
+		for (int i = 0; i < teamsNames.size(); i++) {
+			String str = teamsNames.get(i);
+			
+			for (String[] special : chars)
+				str = str.replaceAll(special[1], special[0]);
+			teamsNames.set(i, str);
+			Print.p(str);
+		}
+		Print.p();
 	}
 }

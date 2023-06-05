@@ -23,7 +23,7 @@ public class HostCreatePanel extends JPanel {
 	
 	public HostCreatePanel() {
 		setLayout(null);
-		setSize(CreateFrame.Width / 2, 200);
+		setSize(CreateFrame.Width / 2, 175);
 		createHosts();
 	}
 	
@@ -52,7 +52,7 @@ public class HostCreatePanel extends JPanel {
 		hosts[1].setVisible(false);
 		
 		//
-		// hosts[0].setText("Katar");
+		 hosts[0].setText("Katar");
 		//
 		
 		// Hosts Choose Box

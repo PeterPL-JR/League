@@ -11,12 +11,12 @@ public class FilesCreatePanel extends JPanel {
 	private static final long serialVersionUID = 1L;
 
 	private Buttons loadLeague;
-	private Buttons addRanking;
 	private JLabel filesLabel;
+	private Buttons exportLeague, importLeague;
 
 	public FilesCreatePanel() {
 		setLayout(null);
-		setSize(CreateFrame.Width / 2, 200);
+		setSize(CreateFrame.Width / 2, 400);
 		createFiles();
 	}
 
@@ -27,25 +27,34 @@ public class FilesCreatePanel extends JPanel {
 		filesLabel.setFont(new Font("Verdana", Font.PLAIN, 22));
 		filesLabel.setBounds(17, 0, 260, 50);
 		add(filesLabel);
+		
+		// Export button
+		exportLeague = new Buttons("Export File");
+		exportLeague.setBounds(17, 50, 267, 50);
+		exportLeague.setAction(this::exportLeagueEvent);
+		add(exportLeague);
+				
+		// Import button
+		importLeague = new Buttons("Import File");
+		importLeague.setBounds(17, 110, 267, 50);
+		importLeague.setAction(this::importLeagueEvent);
+		add(importLeague);
 
 		// Load League Button
 		loadLeague = new Buttons("Load League");
-		loadLeague.setBounds(17, 50, 267, 50);
+		loadLeague.setBounds(17, 185, 267, 50);
 		loadLeague.setAction(this::loadLeagueEvent);
 		add(loadLeague);
-
-		// Add Ranking Button
-		addRanking = new Buttons("Add Ranking");
-		addRanking.setBounds(17, 110, 267, 50);
-		addRanking.setAction(this::addRankingEvent);
-		add(addRanking);
+	}
+	
+	private void exportLeagueEvent() {
+		new LoadFrame(League.createFrame, League.leagueFile.loadFiles(), "choose");
+	}
+	private void importLeagueEvent() {
+		League.filesHandler.importFile();
 	}
 	
 	private void loadLeagueEvent() {
 		new LoadFrame(League.createFrame, League.leagueFile.loadFiles(), "load");
-	}
-	
-	private void addRankingEvent() {
-		
 	}
 }
