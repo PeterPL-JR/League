@@ -32,6 +32,8 @@ public class ScoresDrawHandler {
 
 			Team team1 = round.matches[i].getTeam(0);
 			Team team2 = round.matches[i].getTeam(1);
+			
+			if(team1 == null || team2 == null) return;
 
 			int[] scores = getRandomScores(team1, team2, "match");
 			round.setScore(i, scores[0], scores[1]);

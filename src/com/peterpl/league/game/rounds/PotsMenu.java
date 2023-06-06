@@ -46,7 +46,7 @@ public class PotsMenu extends GamePanel implements Serializable {
 		 	"Urugwaj", "Szwajcaria", "Stany Zjednoczone", "Chorwacja",
 			
 		 	"Senegal", "Iran", "Japonia", "Maroko", 
-		 	"Serbia", "Polska", "Korea Południowa", "Tunezja",
+		 	"Serbia", "Polska", "Islandia", "Tunezja",
 			
 		 	"Kamerun", "Kanada", "Ekwador", "Arabia Saudyjska", 
 		 	"Ghana", euVictory, playOff1, playOff2

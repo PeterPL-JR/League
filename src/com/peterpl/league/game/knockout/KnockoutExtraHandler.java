@@ -68,7 +68,7 @@ public class KnockoutExtraHandler {
 		for (int i = 0; i < League.groupsTeams.length; i++) {
 			if (i == matches[0].getTeam(0).group)
 				continue;
-			firstTeams.add(League.groupsTeams[i][0]);
+			firstTeams.add(Team.getTheSame(League.groupsTeams[i][0], League.allTeams));
 		}
 
 		Team team = teams[0];

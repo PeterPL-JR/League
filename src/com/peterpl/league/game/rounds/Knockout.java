@@ -58,7 +58,7 @@ public abstract class Knockout extends GamePanel {
 	public void setTeamsAdvance(int advance) {
 		for(int i = 0; i < matchesCount; i++) {
 			for(int j = 0; j < 2; j++) {
-				matches[i].getTeam(j).advance = advance;
+				matches[i].getTeam(j).setAdvance(advance);
 			}
 		}
 	}

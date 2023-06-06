@@ -85,6 +85,7 @@ public class PenaltySquare extends ScoreSquare {
 		this.active = active;
 		if(!active) {
 			
+			setEnabled(false);
 			bracketsFont = bracketsFont.deriveFont(Font.PLAIN);
 			
 			for(int i = 0; i < brackets.length; i++)

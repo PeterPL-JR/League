@@ -19,7 +19,7 @@ public class SemiFinals extends Knockout {
 		for(int i = 0; i < matches.length; i++) {
 			matches[i].setLocation(matches[i].getX(), matches[i].getY() + 100 + 70 * i);
 		}
-		// font - 22;	
+		// font - 22;
 	}
 
 	protected void setNextRoundTeams() {

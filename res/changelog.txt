@@ -10,7 +10,7 @@ Date of Version: ?
 
 
 [Błędy do naprawienia]
--> Przywrócić poprawne sortowanie w FinalRankingTable
 -> Posortować drużyny w KnockoutMatch, według grup
--> Naprawić ramki karnych przy SecondRound (1/8 finału)
--> Naprawić błąd w przy trybie 12t/8k, aby były 4 mecze, nie 3
+-> Ustawić poprawnie wszystkie knockout matches
+-> poprawić przełączanie rund
+-> dodać flagi do knockout matches

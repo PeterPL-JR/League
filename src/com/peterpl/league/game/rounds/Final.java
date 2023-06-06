@@ -3,6 +3,7 @@ package com.peterpl.league.game.rounds;
 import com.peterpl.league.*;
 import com.peterpl.league.files.*;
 import com.peterpl.league.game.gui.*;
+import com.peterpl.league.methods.*;
 
 public class Final extends Knockout {
 	private static final long serialVersionUID = 1L;
@@ -43,18 +44,18 @@ public class Final extends Knockout {
 		super.endRound();
 		setTeamsAdvance(Team.Final);
 		winner.setWinner(matches[0].winner.name);
-		matches[0].winner.advance = Team.Winner;
+		matches[0].winner.setAdvance(Team.Winner);
 
 		for (int i = 0; i < League.groupsCount; i++)
 			for (int j = 0; j < League.teamsInGroup; j++)
 				League.advancesTeams[j + i * League.teamsInGroup] = League.allTeams[i][j];
-
+		
 		Team.sortByStats(League.advancesTeams);
 		Team.sortByAdvance(League.advancesTeams);
-		
+
 		// DELETE THIS
-		LeagueFile leagueFile = new LeagueFile();
-		League.leagueFile.saveFile(leagueFile);
+//		LeagueFile leagueFile = new LeagueFile();
+//		League.leagueFile.saveFile(leagueFile);
 		
 		League.ranking.table.update(League.advancesTeams);
 		rightArrow.setVisible(true);

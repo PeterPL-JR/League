@@ -10,7 +10,7 @@ public class Team implements Serializable {
 	public final int pot;
 
 	public boolean host = false;
-	public int advance = GroupPhase;
+	private int advance = GroupPhase;
 
 	private int points;
 	private int goalsScored, goalsLost;
@@ -79,7 +79,7 @@ public class Team implements Serializable {
 	}
 
 	public int[] getStats() {
-
+		
 		int[] stats = { points, wins, draws, loses, goalsScored, goalsLost, goals, matches };
 		return stats;
 	}
@@ -87,6 +87,13 @@ public class Team implements Serializable {
 	public int get(int stat) {
 		int[] stats = getStats();
 		return stats[stat];
+	}
+	
+	public void setAdvance(int advance) {
+		this.advance = advance;
+	}
+	public int getAdvance() {
+		return advance;
 	}
 
 	public static void sortByAdvance(Team[] teams) {
@@ -96,7 +103,7 @@ public class Team implements Serializable {
 			for (int j = length - 1; j >= i; j--) {
 
 				// SORT BY ADVANCE
-				if (teams[j - 1].advance < teams[j].advance) {
+				if (teams[j - 1].getAdvance() < teams[j].getAdvance()) {
 
 					Team buffer = teams[j - 1];
 					teams[j - 1] = teams[j];
@@ -196,5 +203,16 @@ public class Team implements Serializable {
 		for (int i = 0; i < groups.length; i++)
 			newTeams[i] = teams[indexes[i]];
 		return newTeams;
+	}
+	
+	public static Team getTheSame(Team teamNeedle, Team[][] teamsArray) {
+		for(Team[] teams : teamsArray) {
+			for(Team team : teams) {
+				if(team.name == teamNeedle.name && team.group == teamNeedle.group) {
+					return team;
+				}
+			}
+		}
+		return null;
 	}
 }

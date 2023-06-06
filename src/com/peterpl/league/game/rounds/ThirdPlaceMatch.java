@@ -32,7 +32,7 @@ public class ThirdPlaceMatch extends Knockout {
 
 	public void endRound() {
 		super.endRound();
-		matches[0].winner.advance = Team.ThirdPlace;
+		matches[0].winner.setAdvance(Team.ThirdPlace);
 		League.finalMatch.startRound();
 	}
 }

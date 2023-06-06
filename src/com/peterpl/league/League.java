@@ -104,27 +104,27 @@ public class League {
 				FlagsSheet.loadFlagsSheets();
 				menuFrame.setVisible(true);
 
-				/*
-				menuFrame.startEvent();
-				createFrame.optionsCreate.setNamesMode(1);
-
-				createFrame.modeCreate.setTeamsMode(1);
-				createFrame.modeCreate.setKnockoutMode(0);
-				createFrame.buttonEvent();
-				pots.buttonEvent();
-				groups.drawEvent();
-				groups.buttonEvent();
-				
-				League.drawingScores.createScores(groupRound);
-				League.drawingScores.createScores(secondRound);
-				League.gameFrame.setContentPane(quarterFinals);
-				//*/
-
-				/*
-				
-				League.gameFrame.setContentPane(knockout[knockout.length - 2]);
-				/*
-				*/
+//				menuFrame.startEvent();
+//				createFrame.setNameText("WIKTOR LEAGUE 2023");
+//				createFrame.optionsCreate.setNamesMode(0);
+//				createFrame.optionsCreate.setThirdPlaceMatch(true);
+//
+//				createFrame.modeCreate.setTeamsMode(0);
+//				createFrame.modeCreate.setKnockoutMode(0);
+//				createFrame.buttonEvent();
+//				
+//				pots.buttonEvent();
+//				groups.drawEvent();
+//				groups.buttonEvent();
+//				League.drawingScores.createScores(groupRound);
+//				
+//				League.drawingScores.createScores(secondRound);
+//				League.drawingScores.createScores(quarterFinals);
+//				League.drawingScores.createScores(semiFinals);
+//				League.drawingScores.createScores(thirdPlaceMatch);
+//				League.drawingScores.createScores(finalMatch);
+//				
+//				League.gameFrame.setContentPane(League.finalMatch);
 			}
 		});
 	}

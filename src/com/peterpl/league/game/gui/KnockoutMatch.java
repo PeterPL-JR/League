@@ -39,6 +39,7 @@ public class KnockoutMatch extends JPanel {
 		this.height = height;
 		teams = new Team[2];
 		flags = new FlagTeam[2];
+		
 
 		setLayout(null);
 		setSize(BasicWidth, height);
@@ -49,6 +50,12 @@ public class KnockoutMatch extends JPanel {
 		createTeams();
 		createScores();
 		createPenalties();
+		
+//		team[0].setOpaque(true);
+//		team[0].setBackground(Color.red);
+		
+//		team[1].setOpaque(true);
+//		team[1].setBackground(Color.red);
 	}
 
 	public void setScore(int score1, int score2) {
@@ -241,11 +248,11 @@ public class KnockoutMatch extends JPanel {
 			createFlags();
 		}
 		
-		team[0].setSize(200, height);
+		team[0].setSize(230, height);
 		team[0].setLocation(0, 0);
 		
-		team[1].setSize(200, height);
-		team[1].setLocation(347, 0);
+		team[1].setSize(230, height);
+		team[1].setLocation(350, 0);
 
 		team[0].setHorizontalAlignment(SwingConstants.RIGHT);
 		team[1].setHorizontalAlignment(SwingConstants.LEFT);
