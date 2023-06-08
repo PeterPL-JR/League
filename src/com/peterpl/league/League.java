@@ -106,7 +106,7 @@ public class League {
 
 //				menuFrame.startEvent();
 //				createFrame.setNameText("WIKTOR LEAGUE 2023");
-//				createFrame.optionsCreate.setNamesMode(0);
+//				createFrame.optionsCreate.setNamesMode(1);
 //				createFrame.optionsCreate.setThirdPlaceMatch(true);
 //
 //				createFrame.modeCreate.setTeamsMode(0);

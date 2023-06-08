@@ -33,14 +33,15 @@ public class KnockoutMatch extends JPanel {
 	private Team[] teams;
 	public Team winner;
 	public int height;
+	public int fontSize;
 	
-	public KnockoutMatch(Knockout knockout, int height) {
+	public KnockoutMatch(Knockout knockout, int height, int fontSize) {
 		this.knockout = knockout;
 		this.height = height;
 		teams = new Team[2];
 		flags = new FlagTeam[2];
+		this.fontSize = fontSize;
 		
-
 		setLayout(null);
 		setSize(BasicWidth, height);
 		setBackground(SystemColor.controlHighlight);
@@ -111,8 +112,8 @@ public class KnockoutMatch extends JPanel {
 			penalty[i].setActive(true);
 		}
 
-		team[0].setLocation(-41, team[0].getY());
-		team[1].setLocation(388, team[1].getY());
+		team[0].setLocation(-41, team[0].getY()); // TODO
+		team[1].setLocation(388, team[1].getY()); // TODO
 
 		penalty[0].requestFocusInWindow();
 	}
@@ -191,8 +192,8 @@ public class KnockoutMatch extends JPanel {
 			add(penalty[i]);
 		}
 
-		penalty[0].setLocation(200, Game.centerY(penalty[0], this) - 2);
-		penalty[1].setLocation(345, Game.centerY(penalty[1], this) - 2);
+		penalty[0].setLocation(200, Game.centerY(penalty[0], this) - 2); // TODO
+		penalty[1].setLocation(345, Game.centerY(penalty[1], this) - 2); // TODO
 		
 		penalty[0].setRightEvent(penalty[1]);
 		penalty[1].setLeftEvent(penalty[0]);
@@ -229,8 +230,8 @@ public class KnockoutMatch extends JPanel {
 			add(flagLabels[i]);
 		}
 		
-		flagLabels[0].setLocation(30, Game.centerY(flagLabels[0], this));
-		flagLabels[1].setLocation(getWidth() - 80, Game.centerY(flagLabels[1], this));
+		flagLabels[0].setLocation(30, Game.centerY(flagLabels[0], this)); // TODO
+		flagLabels[1].setLocation(getWidth() - 80, Game.centerY(flagLabels[1], this)); // TODO
 	}
 	
 	// CREATE 'TEAMS LABELS'
@@ -239,7 +240,7 @@ public class KnockoutMatch extends JPanel {
 
 		for (int i = 0; i < team.length; i++) {
 			team[i] = new JLabel();
-			team[i].setFont(new Font("Verdana", Font.PLAIN, 15));
+			team[i].setFont(new Font("Verdana", Font.PLAIN, fontSize));
 			//team[i].setBorder(new LineBorder(Color.green));
 			add(team[i]);
 		}
@@ -249,10 +250,10 @@ public class KnockoutMatch extends JPanel {
 		}
 		
 		team[0].setSize(230, height);
-		team[0].setLocation(0, 0);
+		team[0].setLocation(0, 0); // TODO
 		
 		team[1].setSize(230, height);
-		team[1].setLocation(350, 0);
+		team[1].setLocation(350, 0); // TODO
 
 		team[0].setHorizontalAlignment(SwingConstants.RIGHT);
 		team[1].setHorizontalAlignment(SwingConstants.LEFT);
@@ -270,8 +271,8 @@ public class KnockoutMatch extends JPanel {
 			add(score[i]);
 		}
 
-		score[0].setLocation(243, Game.centerY(score[0], this));
-		score[1].setLocation(311, Game.centerY(score[1], this));
+		score[0].setLocation(243, Game.centerY(score[0], this)); // TODO
+		score[1].setLocation(311, Game.centerY(score[1], this)); // TODO
 
 		score[0].setRightEvent(score[1]);
 		score[1].setLeftEvent(score[0]);

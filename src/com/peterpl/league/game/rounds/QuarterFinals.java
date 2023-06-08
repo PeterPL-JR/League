@@ -7,7 +7,7 @@ public class QuarterFinals extends Knockout {
 	private static final long serialVersionUID = 1L;
 	
 	public QuarterFinals() {
-		super("Quarter-Finals", 4, 80, Header.Basic + 10, 1);
+		super("Quarter-Finals", 4, 80, Header.Basic + 10, 20, 1);
 
 		for (int i = 0; i < matches.length; i++) {
 			for (int j = 0; j < 2; j++) {
@@ -19,7 +19,6 @@ public class QuarterFinals extends Knockout {
 		for(int i = 0; i < matches.length; i++) {
 			matches[i].setLocation(matches[i].getX(), matches[i].getY() + 65 + 30 * i);
 		}
-		// font - 20;
 	}
 	
 	public void startRound() {

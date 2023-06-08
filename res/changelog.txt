@@ -11,6 +11,4 @@ Date of Version: ?
 
 [Błędy do naprawienia]
 -> Posortować drużyny w KnockoutMatch, według grup
--> Ustawić poprawnie wszystkie knockout matches
--> poprawić przełączanie rund
 -> dodać flagi do knockout matches

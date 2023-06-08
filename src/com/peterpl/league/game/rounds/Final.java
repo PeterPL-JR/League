@@ -11,7 +11,7 @@ public class Final extends Knockout {
 	public final WinnerScreen winner;
 
 	public Final() {
-		super("Final", 1, 140, Header.Basic + 30, 1);
+		super("Final", 1, 140, Header.Basic + 30, 25, 1);
 
 		for (int i = 0; i < matches.length; i++) {
 			for (int j = 0; j < 2; j++) {
@@ -23,7 +23,6 @@ public class Final extends Knockout {
 		for (int i = 0; i < matches.length; i++) {
 			matches[i].setLocation(matches[i].getX(), matches[i].getY() + 100);
 		}
-		// font - 25;
 
 		rightArrow.setVisible(false);
 		logo.setLocation(logo.getX(), 30);

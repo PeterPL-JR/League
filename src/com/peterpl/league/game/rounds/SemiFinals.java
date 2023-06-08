@@ -7,7 +7,7 @@ public class SemiFinals extends Knockout {
 	private static final long serialVersionUID = 1L;
 
 	public SemiFinals() {
-		super("Semi-Finals", 2, 120, Header.Basic + 15, 1);
+		super("Semi-Finals", 2, 120, Header.Basic + 15, 22, 1);
 		
 		for(int i = 0; i < matches.length; i++) {
 			for(int j = 0; j < 2; j++) {
@@ -19,7 +19,6 @@ public class SemiFinals extends Knockout {
 		for(int i = 0; i < matches.length; i++) {
 			matches[i].setLocation(matches[i].getX(), matches[i].getY() + 100 + 70 * i);
 		}
-		// font - 22;
 	}
 
 	protected void setNextRoundTeams() {
