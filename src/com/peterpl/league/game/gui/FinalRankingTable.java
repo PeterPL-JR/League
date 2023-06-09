@@ -42,18 +42,11 @@ public class FinalRankingTable extends RankingTable {
 	}
 	
 	public void thirdPlacesMatch(boolean bool) {
-		final int T_PLACE_X = 0;
-		final int T_PLACE_Y = 147;
-		
-		final int T_PLACE_WIDTH = 58;
-		final int T_PLACE_HEIGHT_1 = 50;
-		final int T_PLACE_HEIGHT_2 = 99;
-	
 		if(bool) {
-			thirdPlaces.setBounds(T_PLACE_X, T_PLACE_Y, T_PLACE_WIDTH, T_PLACE_HEIGHT_1);
+			thirdPlaces.setBounds(0, 147, 58, 50);
 			setRowColor(3, normal);
 		} else {
-			thirdPlaces.setBounds(T_PLACE_X, T_PLACE_Y, T_PLACE_WIDTH, T_PLACE_HEIGHT_2);
+			thirdPlaces.setBounds(0, 147, 58, 99);
 			setRowColor(3, brown);
 		}
 	}

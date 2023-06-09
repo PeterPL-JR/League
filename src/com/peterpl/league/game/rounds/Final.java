@@ -11,7 +11,7 @@ public class Final extends Knockout {
 	public final WinnerScreen winner;
 
 	public Final() {
-		super("Final", 1, 140, Header.Basic + 30, 25, 1);
+		super("Final", 1, 140, Header.Basic + 30, 25, 1.8);
 
 		for (int i = 0; i < matches.length; i++) {
 			for (int j = 0; j < 2; j++) {

@@ -11,4 +11,7 @@ Date of Version: ?
 
 [Błędy do naprawienia]
 -> Posortować drużyny w KnockoutMatch, według grup
--> dodać flagi do knockout matches
+-> poprawić defaultFlag dla knockout matches
+-> naprawić niektóre drużyny z polskimi znakami
+-> PRZYWRÓCIĆ ZAPISYWANIE PLIKÓW W FINAL
+-> poprawić przełączanie paneli (po powrocie)

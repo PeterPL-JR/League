@@ -18,6 +18,7 @@ public abstract class Knockout extends GamePanel {
 	public final String name;
 	public final int matchesCount;
 	public final int matchHeight;
+	public final int flagWidth, flagHeight;
 	protected int match = 0;
 
 	public KnockoutMatch[] matches;
@@ -28,7 +29,10 @@ public abstract class Knockout extends GamePanel {
 
 	public Knockout(String name, int matchesCount, int matchHeight, int logoFontSize, int matchFontSize, double flagScale) {
 		super(name, logoFontSize, GameFrame.Width, GameFrame.Height);
-		flagTeams = FlagTeam.getAllScaledFlags((int) (BasicFlagWidth * flagScale), (int) (BasicFlagHeight * flagScale), true);
+		
+		this.flagWidth = (int) (BasicFlagWidth * flagScale);
+		this.flagHeight = (int) (BasicFlagHeight * flagScale);
+		flagTeams = FlagTeam.getAllScaledFlags(flagWidth, flagHeight, true);
 		
 		this.name = name;
 		this.matchesCount = matchesCount;
@@ -36,7 +40,7 @@ public abstract class Knockout extends GamePanel {
 		
 		matches = new KnockoutMatch[matchesCount];
 		for (int i = 0; i < matchesCount; i++) {
-			matches[i] = new KnockoutMatch(this, matchHeight, matchFontSize);
+			matches[i] = new KnockoutMatch(this, matchHeight, matchFontSize, flagWidth, flagHeight);
 			matches[i].setLocation(Game.centerX(matches[i], this), 120 + i * (int) (matches[i].getHeight() * 1.15));
 			add(matches[i]);
 		}

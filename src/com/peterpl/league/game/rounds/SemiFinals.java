@@ -7,7 +7,7 @@ public class SemiFinals extends Knockout {
 	private static final long serialVersionUID = 1L;
 
 	public SemiFinals() {
-		super("Semi-Finals", 2, 120, Header.Basic + 15, 22, 1);
+		super("Semi-Finals", 2, 120, Header.Basic + 15, 22, 1.7);
 		
 		for(int i = 0; i < matches.length; i++) {
 			for(int j = 0; j < 2; j++) {

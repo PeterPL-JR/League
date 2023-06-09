@@ -7,7 +7,7 @@ import com.peterpl.league.game.gui.*;
 public class GameFrame extends JFrame {
 	private static final long serialVersionUID = 1L;
 	
-	public static final int Width = 900;
+	public static final int Width = 940;
 	public static final int Height = 830;
 
 	public int activeGroup = 0;

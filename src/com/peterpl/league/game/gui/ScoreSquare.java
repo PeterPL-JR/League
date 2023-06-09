@@ -11,6 +11,8 @@ import com.peterpl.league.methods.*;
 public class ScoreSquare extends JTextField {
 	private static final long serialVersionUID = 1L;
 	
+	public static final int Size = 25;
+	
 	protected boolean active = false;
 	protected boolean focused = false;
 
@@ -57,7 +59,7 @@ public class ScoreSquare extends JTextField {
 	}
 
 	protected void create() {
-		setSize(25, 25);
+		setSize(Size, Size);
 		setFont(new Font("Verdana", Font.PLAIN, 15));
 		setHorizontalAlignment(SwingConstants.CENTER);
 		setBorder(normalBorder);
@@ -81,8 +83,6 @@ public class ScoreSquare extends JTextField {
 				}
 				else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
 					rightEvent.event();
-				} else {
-					setText("");
 				}
 			}
 		};
