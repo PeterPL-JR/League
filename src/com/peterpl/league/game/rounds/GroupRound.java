@@ -14,37 +14,29 @@ public class GroupRound extends GamePanel {
 
 	public GroupRound(String name) {
 		super("Group " + name, Header.Basic, GameFrame.Width, GameFrame.Height);
-		
-		group = new RankingTable(4);
-		group.setLocation(Game.centerX(group, this), groupPosX);
-		add(group);
-
-		matchesTable = new MatchesTable(this);
-		matchesTable.setLocation(Game.centerX(matchesTable, this), matchesPosX);
-		add(matchesTable);
-		
-		leftEvent = () -> { League.gameFrame.setGroup(League.gameFrame.activeGroup - 1); };
-		rightEvent = () -> { League.gameFrame.setGroup(League.gameFrame.activeGroup + 1); };
+		create();
 	}
 	
 	public GroupRound(Team[] teams, Match[] matches, String name) {
 		super("Group " + name, Header.Basic, GameFrame.Width, GameFrame.Height);
-		
-		group = new RankingTable(4);
-		group.setLocation(Game.centerX(group, this), groupPosX);
-		add(group);
+		create();
 		
 		for(int i = 0; i < 4; i++) {
 			group.setTeam(i, teams[i]);
 		}
+		for(int i = 0; i < 6; i++) {
+			matchesTable.setMatches(matches);
+		}
+	}
+	
+	private void create() {
+		group = new RankingTable(4);
+		group.setLocation(Game.centerX(group, this), groupPosX);
+		add(group);
 		
 		matchesTable = new MatchesTable(this);
 		matchesTable.setLocation(Game.centerX(matchesTable, this), matchesPosX);
 		add(matchesTable);
-		
-		for(int i = 0; i < 6; i++) {
-			matchesTable.setMatches(matches);
-		}
 		
 		leftEvent = () -> { League.gameFrame.setGroup(League.gameFrame.activeGroup - 1); };
 		rightEvent = () -> { League.gameFrame.setGroup(League.gameFrame.activeGroup + 1); };

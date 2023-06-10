@@ -5,13 +5,10 @@ Date of Version: ?
 
 [Nowości do zrobienia]
 -> Konwersja starych plików gry do nowych wersji
--> Ustalanie miejsca w grupie, gdy statystyki są takie same
 -> Stworzyć nowy mechanizm importu plików gry
-
+? Ustalanie miejsca w grupie, gdy statystyki są takie same
+? Zmiana języka gry (polski/angielski)
 
 [Błędy do naprawienia]
--> Posortować drużyny w KnockoutMatch, według grup
--> poprawić defaultFlag dla knockout matches
--> naprawić niektóre drużyny z polskimi znakami
 -> PRZYWRÓCIĆ ZAPISYWANIE PLIKÓW W FINAL
--> poprawić przełączanie paneli (po powrocie)
+-> drużyny tej samej konfederacji nie mogą być w tej samej grupie!!!

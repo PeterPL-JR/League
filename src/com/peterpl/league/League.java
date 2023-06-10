@@ -48,7 +48,6 @@ public class League {
 	public static Final finalMatch;
 	public static FinalRanking ranking;
 
-	public static int[][] teamsPotsNumbers;
 	public static String[][] potsTeamsNames;
 	public static String[][] groupsTeamsNames;
 
@@ -74,7 +73,6 @@ public class League {
 	public static void initGroupsRound() {
 		
 		// Tables of Teams Names
-		teamsPotsNumbers = new int[groupsCount][teamsInGroup];
 		potsTeamsNames = new String[teamsInGroup][groupsCount];
 		groupsTeamsNames = new String[groupsCount][teamsInGroup];
 		
@@ -108,8 +106,9 @@ public class League {
 //				createFrame.setNameText("WIKTOR LEAGUE 2023");
 //				createFrame.optionsCreate.setNamesMode(1);
 //				createFrame.optionsCreate.setThirdPlaceMatch(true);
+//				createFrame.hostCreate.setHostSelect(0);
 //
-//				createFrame.modeCreate.setTeamsMode(0);
+//				createFrame.modeCreate.setTeamsMode(3);
 //				createFrame.modeCreate.setKnockoutMode(0);
 //				createFrame.buttonEvent();
 //				

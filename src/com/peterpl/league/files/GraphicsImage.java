@@ -53,4 +53,14 @@ public class GraphicsImage extends ImageIcon {
 	public int getHeight() {
 		return super.getIconHeight();
 	}
+	
+	public GraphicsImage getScaledImage(int width, int height, double size) {
+		Image img = getImage().getScaledInstance((int) (width * size), (int) (height * size), Image.SCALE_DEFAULT);
+		BufferedImage bufImage = new BufferedImage((int) (img.getWidth(null) * size),
+				(int) (img.getHeight(null) * size), 2);
+
+		Graphics2D graphics = bufImage.createGraphics();
+		graphics.drawImage(img, 0, 0, null);
+		return new GraphicsImage(img);
+	}
 }

@@ -8,6 +8,7 @@ import java.awt.image.*;
 import javax.swing.*;
 
 import com.peterpl.league.files.*;
+import com.peterpl.league.methods.*;
 
 public class FlagTeam {
 	public static ArrayList<FlagTeam> flags = new ArrayList<>();
@@ -51,21 +52,23 @@ public class FlagTeam {
 				}
 			}
 		}
-
-		Image img = flag.getImage().getScaledInstance((int) (width * size), (int) (height * size), Image.SCALE_DEFAULT);
-		BufferedImage bufImage = new BufferedImage((int) (img.getWidth(null) * size),
-				(int) (img.getHeight(null) * size), 2);
-
-		Graphics2D graphics = bufImage.createGraphics();
-		graphics.drawImage(img, 0, 0, null);
-		return new FlagTeam(new GraphicsImage(img), names, landName);
+		return new FlagTeam(flag.getScaledImage(width, height, size), names, landName);
+	}
+	
+	public static FlagTeam getCountry(String name) {
+		for(FlagTeam bufferTeam : flags) {
+			if(Game.indexOf(bufferTeam.names, League.countriesFile.encodeString(name)) != -1) {
+				return bufferTeam;
+			}
+		}
+		return null;
 	}
 
 	public static boolean findCountry(String string, FlagTeam team, JLabel label, JPanel panel,
 			ArrayList<FlagTeam> flags) {
 		for (FlagTeam flag : flags) {
 			for (String name : flag.names) {
-				if (string.equals(name)) {
+				if (League.countriesFile.encodeString(string).equals(name)) {
 					team = flag;
 
 					if (panel != null) {

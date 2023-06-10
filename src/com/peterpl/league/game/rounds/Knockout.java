@@ -14,7 +14,7 @@ public abstract class Knockout extends GamePanel {
 	public static final int BasicFlagWidth = 30;
 	public static final int BasicFlagHeight = 20;
 	
-	public ArrayList<FlagTeam> flagTeams;;	
+	public ArrayList<FlagTeam> flagTeams;
 	public final String name;
 	public final int matchesCount;
 	public final int matchHeight;
@@ -146,9 +146,9 @@ public abstract class Knockout extends GamePanel {
 	
 	public void setMatchFocus(int index) {
 		if(index < 0 || index >= matches.length) return;
-		matches[index].score[0].requestFocusInWindow();
+		matches[index].setFocus();
 	}
-
+	
 	private void playMatch() {
 		matches[match].play();
 		button.setVisible(true);

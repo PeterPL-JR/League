@@ -5,6 +5,8 @@ import java.awt.event.*;
 
 import javax.swing.*;
 import javax.swing.border.*;
+import javax.swing.text.*;
+import javax.swing.text.DocumentFilter.*;
 
 import com.peterpl.league.methods.*;
 
@@ -63,10 +65,14 @@ public class ScoreSquare extends JTextField {
 		setFont(new Font("Verdana", Font.PLAIN, 15));
 		setHorizontalAlignment(SwingConstants.CENTER);
 		setBorder(normalBorder);
+		setEnabled(false);
 
 		enterKeyEvent = () -> {};
 		leftEvent = () -> {};
 		rightEvent = () -> {};
+		
+		PlainDocument doc = (PlainDocument) getDocument();
+		doc.setDocumentFilter(new TextFilter());
 	}
 
 	protected void createKeyEvents() {
@@ -160,5 +166,43 @@ public class ScoreSquare extends JTextField {
 
 	public boolean isActive() {
 		return active;
+	}
+	
+	private class TextFilter extends DocumentFilter {
+		public static final int MAX_LENGTH = 2;
+				
+		public void insertString(FilterBypass fb, int offset, String text, AttributeSet attr) throws BadLocationException {
+			Document doc = fb.getDocument();
+			StringBuilder sb = new StringBuilder();
+			sb.append(doc.getText(0, doc.getLength()));
+			sb.insert(offset, text);
+
+			if (checkLength(doc, text) && checkNumbers(sb.toString())) {
+				super.insertString(fb, offset, text, attr);
+			}
+		}
+		public void replace(FilterBypass fb, int offset, int length, String text, AttributeSet attrs) throws BadLocationException {
+			Document doc = fb.getDocument();
+			StringBuilder sb = new StringBuilder();
+			sb.append(doc.getText(0, doc.getLength()));
+			sb.replace(offset, offset + length, text);
+
+			if (checkLength(doc, text) && checkNumbers(sb.toString())) {
+				super.replace(fb, offset, length, text, attrs);
+			}
+		}
+		
+		private boolean checkNumbers(String text) {
+			try {
+				Integer.parseInt(text);
+				return true;
+			} catch (NumberFormatException e) {
+				return false;
+			}
+		}
+		
+		private boolean checkLength(Document doc, String text) {
+			return doc.getLength() + text.length() <= MAX_LENGTH;
+		}
 	}
 }

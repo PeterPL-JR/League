@@ -56,7 +56,9 @@ public class MatchesTable extends JPanel {
 
 	public void setMatchFocus(int index) {
 		if(index < 0 || index >= matchesParts.length) return;
-		matchesParts[index].score[0].requestFocusInWindow();
+		
+		int scoreIndex = matchesParts[index].score[0].getText().equals("") ? 0 : 1;
+		matchesParts[index].score[scoreIndex].requestFocusInWindow();
 	}
 	
 	public void setMatches(Team[] group, int groupIndex) {

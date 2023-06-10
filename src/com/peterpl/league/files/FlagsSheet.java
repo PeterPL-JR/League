@@ -5,6 +5,7 @@ import java.util.*;
 import java.awt.image.*;
 
 import com.peterpl.league.*;
+import com.peterpl.league.methods.*;
 
 public class FlagsSheet {
 	private ArrayList<GraphicsImage> images;

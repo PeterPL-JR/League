@@ -9,16 +9,14 @@ public class DrawHandler {
 
 	private String[][] pots;
 	private String[][] groups;
-	private int[][] numbers;
 
 	private int potsN;
 	private int groupsN;
 
-	public void draw(String[][] pots, String[][] groups, int[][] numbers) {
+	public void draw(String[][] pots, String[][] groups) {
 
 		this.pots = pots;
 		this.groups = groups;
-		this.numbers = numbers;
 
 		potsN = pots.length;
 		groupsN = groups.length;
@@ -50,7 +48,6 @@ public class DrawHandler {
 					position = random.nextInt(3) + 1;
 				} while (groups[i][position] != null);
 				groups[i][position] = pots[n][draws[i]];
-				numbers[i][position] = n;
 			}
 		}
 	}
@@ -72,6 +69,10 @@ public class DrawHandler {
 			draws[drawGroup] = i;
 		}
 
+		createHosts(draws, drawsLength);
+	}
+	
+	private void createHosts(int[] draws, int drawsLength) {
 		if (League.hostsCount == 0)
 			for (int i = 0; i < drawsLength; i++)
 				groups[i][0] = pots[0][draws[i]];
@@ -79,7 +80,6 @@ public class DrawHandler {
 		if (League.hostsCount == 1) {
 			for (int i = 0; i < drawsLength; i++)
 				groups[i + League.hostsCount][0] = pots[0][draws[i] + League.hostsCount];
-
 			groups[0][0] = pots[0][0];
 		}
 
@@ -91,7 +91,6 @@ public class DrawHandler {
 			} else {
 				for (int i = 0; i < count; i++)
 					groups[i + 1][0] = pots[0][draws[i] + League.hostsCount];
-
 				for (int i = count; i < count + count; i++)
 					groups[i + 2][0] = pots[0][draws[i] + League.hostsCount];
 			}
@@ -99,8 +98,5 @@ public class DrawHandler {
 			groups[0][0] = pots[0][0];
 			groups[groupsN / 2][0] = pots[0][1];
 		}
-
-		for (int i = 0; i < groupsN; i++)
-			numbers[i][0] = 0;
 	}
 }

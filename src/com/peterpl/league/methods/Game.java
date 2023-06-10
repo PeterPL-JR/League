@@ -4,6 +4,7 @@ import static com.peterpl.league.League.*;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.util.*;
 
 import javax.swing.*;
 
@@ -11,7 +12,6 @@ import com.peterpl.league.game.gui.*;
 
 public interface Game {
 
-	/** Function checking if a string is empty */
 	public static boolean isStringEmpty(String string) {
 		boolean empty = true;
 
@@ -25,7 +25,6 @@ public interface Game {
 		return empty;
 	}
 
-	/** Function checking if all elements of a 2D array are unique */
 	public static boolean isArrayUnique(String[] array) {
 		boolean unique = true;
 
@@ -40,6 +39,40 @@ public interface Game {
 			}
 		}
 		return true;
+	}
+	
+	public static <T> int indexOf(T[] hayStack, T needle) {
+		for(int i = 0; i < hayStack.length; i++) {
+			T elem = hayStack[i];
+			if(elem.equals(needle)) {
+				return i;
+			}
+		}
+		return -1;
+	}
+	
+	public static int[] shuffleArray(int[] array) {
+		ArrayList<Integer> list = new ArrayList<>();
+		ArrayList<Integer> newList = new ArrayList<>();
+		
+		for(int elem : array) list.add(elem);
+		Random random = new Random();
+		
+		int counter = 0;
+		while(counter < array.length) {
+			int randIndex = random.nextInt(list.size());
+			
+			newList.add(list.get(randIndex));
+			list.remove(randIndex);
+			
+			counter++;
+		}
+		
+		int[] newArray = new int[newList.size()];
+		for(int i = 0; i < newList.size(); i++) {
+			newArray[i] = newList.get(i);
+		}
+		return newArray;
 	}
 
 	public static void setFocusSwitches(JComponent[] objects, int index) {

@@ -39,14 +39,14 @@ public class PotsMenu extends GamePanel implements Serializable {
 		
 		 //*
 		 String[] teams = {
-		 	"Katar", "Brazylia", "Belgia", "Francja",
+		 	"Włochy", "Brazylia", "Belgia", "Francja",
 		 	"Argentyna", "Anglia", "Hiszpania", "Portugalia",
 			
 		 	"Meksyk", "Holandia", "Dania", "Niemcy", 
 		 	"Urugwaj", "Szwajcaria", "Stany Zjednoczone", "Chorwacja",
 			
 		 	"Senegal", "Iran", "Japonia", "Maroko", 
-		 	"Serbia", "Polska", "Islandia", "Tunezja",
+		 	"Serbia", "Polska", "Korea Południowa", "Tunezja",
 			
 		 	"Kamerun", "Kanada", "Ekwador", "Arabia Saudyjska", 
 		 	"Ghana", euVictory, playOff1, playOff2

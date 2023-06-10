@@ -6,6 +6,7 @@ import java.awt.event.*;
 
 import com.peterpl.league.*;
 import com.peterpl.league.game.rounds.*;
+import com.peterpl.league.methods.*;
 
 public class GroupsHandler implements Serializable {
 	private static final long serialVersionUID = 1L;

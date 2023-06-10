@@ -51,10 +51,6 @@ public class HostCreatePanel extends JPanel {
 		}
 		hosts[1].setVisible(false);
 		
-		//
-		 hosts[0].setText("Katar");
-		//
-		
 		// Hosts Choose Box
 		hostChoose = new JComboBox<>();
 		hostChoose.setFont(new Font("Verdana", Font.PLAIN, 15));
@@ -70,43 +66,53 @@ public class HostCreatePanel extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				
 				int selectedItem = getHostSelect();
-				switch(selectedItem) {
-				case 0:
-					setHost(0, true, false);
-					setHost(1, false, false);
-					
-					hosts[0].setText(null);
-					hosts[1].setText(null);
-					hostChoose.setLocation(hostChoose.getX(), 92);
-					break;
-				case 1:
-					setHost(0, true, true);
-					setHost(1, false, false);
-					hostChoose.setLocation(hostChoose.getX(), 92);
-					break;
-				case 2:
-					setHost(0, true, true);
-					setHost(1, true, true);
-					
-					hosts[0].requestFocusInWindow();
-					hosts[1].requestFocusInWindow();
-					hostChoose.requestFocusInWindow();
-					
-					hostChoose.setLocation(hostChoose.getX(), 134);
-					break;
-				}
+				setHostSelect(selectedItem);
 			}
 		});
 	}
 	
-	private void setHost(int index, boolean visible, boolean active) {
-		hosts[index].setVisible(visible);
+	public void setHostSelect(int mode) {
+		hostChoose.setSelectedIndex(mode);
 		
-		hosts[index].setActive(active);
-		hosts[index].setEditable(active);
+		switch(mode) {
+		case 0:
+			setHostProperties(0, true, false);
+			setHostProperties(1, false, false);
+			
+			hosts[0].setText(null);
+			hosts[1].setText(null);
+			hostChoose.setLocation(hostChoose.getX(), 92);
+			break;
+		case 1:
+			setHostProperties(0, true, true);
+			setHostProperties(1, false, false);
+			hostChoose.setLocation(hostChoose.getX(), 92);
+			break;
+		case 2:
+			setHostProperties(0, true, true);
+			setHostProperties(1, true, true);
+			
+			hosts[0].requestFocusInWindow();
+			hosts[1].requestFocusInWindow();
+			hostChoose.requestFocusInWindow();
+			
+			hostChoose.setLocation(hostChoose.getX(), 134);
+			break;
+		}
 	}
 	
 	public int getHostSelect() {
 		return hostChoose.getSelectedIndex();
+	}
+	
+	public void setHost(int index, String name) {
+		hosts[index].setText(name);
+	}
+	
+	private void setHostProperties(int index, boolean visible, boolean active) {
+		hosts[index].setVisible(visible);
+		
+		hosts[index].setActive(active);
+		hosts[index].setEditable(active);
 	}
 }

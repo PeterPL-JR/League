@@ -42,14 +42,26 @@ public class CountriesFileHandler {
 		return namesArray;
 	}
 	
+	public String encodeString(String str) {
+		for(String[] special : chars) {
+			str = str.replaceAll(special[0], special[1]);
+		}
+		return str;
+	}
+	
+	public String decodeString(String str) {
+		for(String[] special : chars) {
+			str = str.replaceAll(special[1], special[0]);
+		}
+		return str;
+	}
+	
 	private void printTeams(ArrayList<String> teamsNames) {
 		for (int i = 0; i < teamsNames.size(); i++) {
-			String str = teamsNames.get(i);
+			String codeName = teamsNames.get(i);
+			String name = decodeString(codeName);
 			
-			for (String[] special : chars)
-				str = str.replaceAll(special[1], special[0]);
-			teamsNames.set(i, str);
-			Print.p(str);
+			Print.p(name);
 		}
 		Print.p();
 	}

@@ -27,7 +27,7 @@ public class KnockoutMatch extends JPanel {
 
 	private JLabel scoreLabel;
 	private JLabel[] team;
-	public ScoreSquare[] score;
+	private ScoreSquare[] score;
 
 	private PenaltySquare[] penalty;
 	private Team[] teams;
@@ -38,6 +38,7 @@ public class KnockoutMatch extends JPanel {
 	public int fontSize;
 	public final int flagWidth, flagHeight;
 	private final int flagOffset = 7;
+	private final GraphicsImage defaultFlag;
 	
 	public KnockoutMatch(Knockout knockout, int height, int fontSize, int flagWidth, int flagHeight) {
 		this.knockout = knockout;
@@ -48,6 +49,7 @@ public class KnockoutMatch extends JPanel {
 		
 		this.flagWidth = flagWidth;
 		this.flagHeight = flagHeight;
+		defaultFlag = GraphicsImage.defaultFlag.getScaledImage(flagWidth, flagHeight, 1);
 		
 		setLayout(null);
 		setSize(BasicWidth, height);
@@ -172,7 +174,6 @@ public class KnockoutMatch extends JPanel {
 	public int getScore(int index) {
 		return Integer.parseInt(score[index].getScore());
 	}
-
 	public int getPenalty(int index) {
 		return Integer.parseInt(penalty[index].getScore());
 	}
@@ -187,6 +188,16 @@ public class KnockoutMatch extends JPanel {
 
 	public boolean penaltyRound() {
 		return penaltyRound;
+	}
+	
+	public void setFocus() {
+		if(penaltyRound()) {
+			int penaltyIndex = penalty[0].getText().equals("") ? 0 : 1;
+			penalty[penaltyIndex].requestFocusInWindow();
+		} else {
+			int scoreIndex = score[0].getText().equals("") ? 0 : 1;
+			score[scoreIndex].requestFocusInWindow();			
+		}
 	}
 
 	private void createPenalties() {
@@ -234,8 +245,8 @@ public class KnockoutMatch extends JPanel {
 		flagLabels = new JLabel[2];
 		for(int i = 0; i < flagLabels.length; i++) {
 			flagLabels[i] = new JLabel();
-			flagLabels[i].setSize(FlagTextField.FlagWidth, FlagTextField.FlagHeight);
-			flagLabels[i].setIcon(GraphicsImage.defaultFlag);
+			flagLabels[i].setSize(flagWidth, flagHeight);
+			flagLabels[i].setIcon(defaultFlag);
 //			flagLabels[i].setBorder(new LineBorder(Color.red));
 			add(flagLabels[i]);
 		}

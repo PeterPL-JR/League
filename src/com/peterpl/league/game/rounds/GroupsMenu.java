@@ -72,11 +72,27 @@ public class GroupsMenu extends GamePanel implements Serializable {
 
 		if(!Game.isArrayUnique(allTeams))
 			return;
-		
+
+		int[][] potsNumbers = new int[League.groupsCount][League.teamsInGroup];
+		for(int i = 0; i < League.groupsCount; i++) {
+			for(int j = 0; j < League.teamsInGroup; j++) {
+				String team = League.groupsTeamsNames[i][j];
+				
+
+				for(int p = 0; p < League.teamsInGroup; p++) {
+					String[] potArray = League.potsTeamsNames[p];
+					if(Game.indexOf(potArray, team) != -1) {
+						potsNumbers[i][j] = p;
+						break;
+					}
+				}
+			}
+		}
+
 		for (int i = 0; i < League.groupsCount; i++) {
 			for (int j = 0; j < League.teamsInGroup; j++) {
 
-				Team team = new Team(teamsNames[i][j], i, League.teamsPotsNumbers[i][j]);
+				Team team = new Team(teamsNames[i][j], i, potsNumbers[i][j]);
 				
 				League.allTeams[i][j] = team;
 				League.groupRound[i].group.setTeam(j, team);
@@ -96,11 +112,7 @@ public class GroupsMenu extends GamePanel implements Serializable {
 
 	// TO PRIVATE
 	public void drawEvent() {
-		for(int i = 0; i < League.groupsCount; i++)
-			for(int j = 0; j < League.teamsInGroup; j++)
-				League.teamsPotsNumbers[i][j] = i;
-		
-		League.drawing.draw(League.potsTeamsNames, League.groupsTeamsNames, League.teamsPotsNumbers);
+		League.drawing.draw(League.potsTeamsNames, League.groupsTeamsNames);
 
 		for (int i = 0; i < League.allTeams.length; i++)
 			for (int j = 0; j < League.allTeams[i].length; j++)

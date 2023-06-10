@@ -3,18 +3,28 @@ package com.peterpl.league.game.gui;
 import javax.swing.*;
 import javax.swing.border.*;
 
+import com.peterpl.league.*;
 import com.peterpl.league.files.*;
 import com.peterpl.league.methods.*;
 
-import java.awt.Color;
-import java.awt.Font;
+import java.awt.*;
+import java.util.*;
 
 public class WinnerScreen extends JPanel {
 	private static final long serialVersionUID = 1L;
+	
+	public static final int FlagWidth = FlagTeam.Width;
+	public static final int FlagHeight = FlagTeam.Height;
+
+	public static ArrayList<FlagTeam> flagTeams = FlagTeam.getAllScaledFlags(FlagWidth, FlagHeight, true);
+	private FlagTeam flagTeam;
 
 	private JLabel title;
 	private JLabel cup;
-	private JLabel winner;
+	private JPanel winner;
+	
+	private JLabel winnerName;
+	private JLabel winnerFlag;
 	
 	public WinnerScreen() {
 		setLayout(null);
@@ -42,17 +52,31 @@ public class WinnerScreen extends JPanel {
 		cup.setLocation(Game.centerX(cup, this), 66);
 		add(cup);
 		
-		winner = new JLabel();
-		winner.setForeground(Color.DARK_GRAY);
-		winner.setFont(new Font("Verdana", Font.BOLD, 40));
-		winner.setHorizontalAlignment(SwingConstants.CENTER);
+		winner = new JPanel();
 		winner.setSize(getWidth(), 85);
-		winner.setLocation(0, 251);
+		winner.setLocation(0, 255);
 		add(winner);
+		
+		if(League.flagsMode) {
+			winnerFlag = new JLabel();
+			winnerFlag.setSize(FlagWidth, FlagHeight);
+			winner.add(winnerFlag);
+		}
+		
+		winnerName = new JLabel();
+		winnerName.setForeground(Color.DARK_GRAY);
+		winnerName.setFont(new Font("Verdana", Font.BOLD, 42));
+		winnerName.setHorizontalAlignment(SwingConstants.CENTER);
+		winnerName.setBorder(new EmptyBorder(0, 15, 0, 15));
+		winner.add(winnerName);
 	}
 	
 	public void setWinner(String name) {
 		title.setVisible(true);
-		winner.setText(name);
+		winnerName.setText(name);
+		
+		if(League.flagsMode) {
+			FlagTeam.findCountry(name, flagTeam, winnerFlag, winner, flagTeams);
+		}
 	}
 }
