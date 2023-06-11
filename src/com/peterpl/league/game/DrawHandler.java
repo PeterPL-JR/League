@@ -3,9 +3,13 @@ package com.peterpl.league.game;
 import java.util.*;
 
 import com.peterpl.league.*;
+import com.peterpl.league.methods.*;
 
 public class DrawHandler {
+	private LandsDrawHandler landsDraw = new LandsDrawHandler();
 	private Random random = new Random();
+	
+	static final int Team = 0, GroupIndex = 1, PotIndex = 2;
 
 	private String[][] pots;
 	private String[][] groups;
@@ -14,41 +18,55 @@ public class DrawHandler {
 	private int groupsN;
 
 	public void draw(String[][] pots, String[][] groups) {
-
+		this.potsN = pots.length;
+		this.groupsN = groups.length;
+		
 		this.pots = pots;
 		this.groups = groups;
-
-		potsN = pots.length;
-		groupsN = groups.length;
-
+		landsDraw.init(pots, potsN * groupsN, groupsN);
+		
 		drawPot1();
+		
+		for(int i = 1; i < potsN; i++) {
+			drawPot(pots, i);
+		}
+		for(int i = 0; i < groupsN; i++) {
+			drawPositions(groups, i);
+		}
+	}
 
-		for (int i = 1; i < groups.length; i++)
-			for (int j = 1; j < groups[i].length; j++)
-				groups[i][j] = null;
-
-		for (int n = 1; n < potsN; n++) {
-
-			int[] draws = new int[groupsN];
-			for (int i = 0; i < draws.length; i++)
-				draws[i] = -1;
-
-			for (int i = 0; i < draws.length; i++) {
-
-				int drawGroup;
-				do {
-					drawGroup = random.nextInt(groupsN);
-				} while (draws[drawGroup] != -1);
-				draws[drawGroup] = i;
+	private void drawPot(String[][] pots, int potIndex) {
+		String[] randomTeams = Game.shuffleArray(pots[potIndex]);
+		
+		for(int i = 0; i < groupsN; i++) {
+			String team = randomTeams[i];
+			String[] group = groups[i];
+			
+			if(League.flagsMode) {
+				if(landsDraw.checkLands(group, team, i, potIndex)) {
+					continue;
+				}
 			}
+			group[potIndex] = team;
+		}
 
-			for (int i = 0; i < groups.length; i++) {
-				int position;
-				do {
-					position = random.nextInt(3) + 1;
-				} while (groups[i][position] != null);
-				groups[i][position] = pots[n][draws[i]];
+		if(landsDraw.countTeams(groups, potIndex) != groupsN) {
+			for(int i = 0; i < groupsN; i++) {
+				groups[i][potIndex] = null;
 			}
+			drawPot(pots, potIndex);
+		}
+	}
+	
+	private void drawPositions(String[][] groups, int groupIndex) {
+		String[] teams = new String[potsN - 1];
+		
+		for(int i = 0; i < potsN - 1; i++) {
+			teams[i] = groups[groupIndex][i + 1];
+		}
+		teams = Game.shuffleArray(teams);
+		for(int i = 0; i < teams.length; i++) {
+			groups[groupIndex][i + 1] = teams[i];
 		}
 	}
 

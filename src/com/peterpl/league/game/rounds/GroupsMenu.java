@@ -111,7 +111,7 @@ public class GroupsMenu extends GamePanel implements Serializable {
 	}
 
 	// TO PRIVATE
-	public void drawEvent() {
+	public void drawEvent() {	
 		League.drawing.draw(League.potsTeamsNames, League.groupsTeamsNames);
 
 		for (int i = 0; i < League.allTeams.length; i++)

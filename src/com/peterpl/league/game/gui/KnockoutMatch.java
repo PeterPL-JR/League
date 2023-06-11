@@ -124,8 +124,10 @@ public class KnockoutMatch extends JPanel {
 		team[0].setLocation(team[0].getX() - 41, team[0].getY());
 		team[1].setLocation(team[1].getX() + 38, team[1].getY());
 		
-		flagLabels[0].setLocation(flagLabels[0].getX() - 41, flagLabels[0].getY());
-		flagLabels[1].setLocation(flagLabels[1].getX() + 38, flagLabels[1].getY());
+		if(flagLabels != null) {			
+			flagLabels[0].setLocation(flagLabels[0].getX() - 41, flagLabels[0].getY());
+			flagLabels[1].setLocation(flagLabels[1].getX() + 38, flagLabels[1].getY());
+		}
 
 		penalty[0].requestFocusInWindow();
 	}

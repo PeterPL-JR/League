@@ -11,4 +11,3 @@ Date of Version: ?
 
 [Błędy do naprawienia]
 -> PRZYWRÓCIĆ ZAPISYWANIE PLIKÓW W FINAL
--> drużyny tej samej konfederacji nie mogą być w tej samej grupie!!!

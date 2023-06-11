@@ -10,7 +10,7 @@ import com.peterpl.league.methods.*;
 
 public class League {
 	public static final String title = "League";
-	
+
 	public static String leagueName;
 	public static String gameMode;
 	public static int gameModeInt;
@@ -104,12 +104,12 @@ public class League {
 
 //				menuFrame.startEvent();
 //				createFrame.setNameText("WIKTOR LEAGUE 2023");
-//				createFrame.optionsCreate.setNamesMode(1);
+//				createFrame.optionsCreate.setNamesMode(0);
 //				createFrame.optionsCreate.setThirdPlaceMatch(true);
 //				createFrame.hostCreate.setHostSelect(0);
 //
 //				createFrame.modeCreate.setTeamsMode(3);
-//				createFrame.modeCreate.setKnockoutMode(0);
+//				createFrame.modeCreate.setKnockoutMode(1);
 //				createFrame.buttonEvent();
 //				
 //				pots.buttonEvent();

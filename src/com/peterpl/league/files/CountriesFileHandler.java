@@ -43,6 +43,8 @@ public class CountriesFileHandler {
 	}
 	
 	public String encodeString(String str) {
+		if(str == null) return null;
+		
 		for(String[] special : chars) {
 			str = str.replaceAll(special[0], special[1]);
 		}
@@ -50,6 +52,8 @@ public class CountriesFileHandler {
 	}
 	
 	public String decodeString(String str) {
+		if(str == null) return null;
+
 		for(String[] special : chars) {
 			str = str.replaceAll(special[1], special[0]);
 		}

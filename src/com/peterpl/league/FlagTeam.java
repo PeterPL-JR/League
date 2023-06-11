@@ -2,9 +2,6 @@ package com.peterpl.league;
 
 import java.util.*;
 
-import java.awt.*;
-import java.awt.image.*;
-
 import javax.swing.*;
 
 import com.peterpl.league.files.*;
@@ -95,6 +92,15 @@ public class FlagTeam {
 		}
 		label.setIcon(GraphicsImage.defaultFlag);
 		return false;
+	}
+	
+	public static String getLand(String team) {
+		for(FlagTeam flagTeam : FlagTeam.flags) {
+			if(Game.indexOf(flagTeam.names, League.countriesFile.encodeString(team)) != -1) {
+				return flagTeam.landName;
+			}
+		}
+		return null;
 	}
 
 	public static ArrayList<FlagTeam> getAllScaledFlags(int width, int height, boolean exceptions) {

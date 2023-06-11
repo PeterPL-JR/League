@@ -51,11 +51,11 @@ public interface Game {
 		return -1;
 	}
 	
-	public static int[] shuffleArray(int[] array) {
-		ArrayList<Integer> list = new ArrayList<>();
-		ArrayList<Integer> newList = new ArrayList<>();
+	public static String[] shuffleArray(String[] array) {
+		ArrayList<String> list = new ArrayList<>();
+		ArrayList<String> newList = new ArrayList<>();
 		
-		for(int elem : array) list.add(elem);
+		for(String elem : array) list.add(elem);
 		Random random = new Random();
 		
 		int counter = 0;
@@ -68,7 +68,7 @@ public interface Game {
 			counter++;
 		}
 		
-		int[] newArray = new int[newList.size()];
+		String[] newArray = new String[newList.size()];
 		for(int i = 0; i < newList.size(); i++) {
 			newArray[i] = newList.get(i);
 		}
