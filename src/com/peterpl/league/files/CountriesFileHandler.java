@@ -60,6 +60,7 @@ public class CountriesFileHandler {
 		return str;
 	}
 	
+	@SuppressWarnings("unused")
 	private void printTeams(ArrayList<String> teamsNames) {
 		for (int i = 0; i < teamsNames.size(); i++) {
 			String codeName = teamsNames.get(i);

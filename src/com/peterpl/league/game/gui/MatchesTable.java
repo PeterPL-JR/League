@@ -130,6 +130,11 @@ public class MatchesTable extends JPanel {
 		}
 
 		private void setMatch(Team team1, Team team2, int score1, int score2) {
+			if(League.flagsMode) {
+				FlagTeam.findCountry(team1.name, flagTeams[0], flagLabels[0], this, MatchesTable.flagTeams);
+				FlagTeam.findCountry(team2.name, flagTeams[1], flagLabels[1], this, MatchesTable.flagTeams);
+			}
+			
 			team[0].setText(team1.name);
 			team[1].setText(team2.name);
 			

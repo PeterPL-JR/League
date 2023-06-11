@@ -6,7 +6,6 @@ import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.border.*;
 import javax.swing.text.*;
-import javax.swing.text.DocumentFilter.*;
 
 import com.peterpl.league.methods.*;
 

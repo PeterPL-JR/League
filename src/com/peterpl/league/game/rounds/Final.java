@@ -3,7 +3,6 @@ package com.peterpl.league.game.rounds;
 import com.peterpl.league.*;
 import com.peterpl.league.files.*;
 import com.peterpl.league.game.gui.*;
-import com.peterpl.league.methods.*;
 
 public class Final extends Knockout {
 	private static final long serialVersionUID = 1L;
@@ -52,9 +51,8 @@ public class Final extends Knockout {
 		Team.sortByStats(League.advancesTeams);
 		Team.sortByAdvance(League.advancesTeams);
 
-		// DELETE THIS
-//		LeagueFile leagueFile = new LeagueFile();
-//		League.leagueFile.saveFile(leagueFile);
+		LeagueFile leagueFile = new LeagueFile();
+		League.leagueFile.saveFile(leagueFile);
 		
 		League.ranking.table.update(League.advancesTeams);
 		rightArrow.setVisible(true);

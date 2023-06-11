@@ -88,7 +88,7 @@ public class CreateFrame extends JFrame {
 
 		// Options Create Panel
 		optionsCreate = new OptionsCreatePanel();
-		optionsCreate.setLocation(0, 450);
+		optionsCreate.setLocation(0, 460);
 		add(optionsCreate);
 
 		// Files Create Panel
@@ -109,9 +109,7 @@ public class CreateFrame extends JFrame {
 		League.gameFrame = new GameFrame();
 		League.gameFrame.setVisible(true);
 
-		LoadLeagueHandler.loadGroupRound(leagueFile);
-		LoadLeagueHandler.loadKnockout(leagueFile);
-		LoadLeagueHandler.loadTables(leagueFile);
+		LoadLeagueHandler.loadLeague(leagueFile);
 	}
 
 	// to PRIVATE

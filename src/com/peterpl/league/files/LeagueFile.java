@@ -17,6 +17,7 @@ public class LeagueFile implements Serializable {
 	public int knockoutRounds;
 	public boolean thirdPlace;
 	public boolean extraTeamsTable;
+	public boolean flagsMode;
 	
 	public int day, month, year;
 	public int hour, minute, second;
@@ -39,6 +40,7 @@ public class LeagueFile implements Serializable {
 		knockoutRounds = League.knockoutRounds;
 		thirdPlace = League.thirdPlace;
 		extraTeamsTable = League.extraTable;
+		flagsMode = League.flagsMode;
 		
 		groupTeams = League.groupsTeams;
 		groupMatches = League.groupsMatches;

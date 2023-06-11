@@ -3,7 +3,6 @@ package com.peterpl.league;
 import javax.swing.*;
 
 import com.peterpl.league.game.gui.*;
-import com.peterpl.league.methods.*;
 
 public class GameFrame extends JFrame {
 	private static final long serialVersionUID = 1L;

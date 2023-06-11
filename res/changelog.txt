@@ -6,8 +6,10 @@ Date of Version: ?
 [Nowości do zrobienia]
 -> Konwersja starych plików gry do nowych wersji
 -> Stworzyć nowy mechanizm importu plików gry
+-> poprawić sortowanie plików gry
 ? Ustalanie miejsca w grupie, gdy statystyki są takie same
-? Zmiana języka gry (polski/angielski)
 
 [Błędy do naprawienia]
 -> PRZYWRÓCIĆ ZAPISYWANIE PLIKÓW W FINAL
+-> focus ustawia się na obecny mecz po wejsciu z poprzedniej rundy!
+-> w trybie 12t robi się stack overflow

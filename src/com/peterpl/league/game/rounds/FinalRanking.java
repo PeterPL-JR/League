@@ -7,7 +7,6 @@ import javax.swing.*;
 import com.peterpl.league.*;
 import com.peterpl.league.game.gui.*;
 import com.peterpl.league.game.gui.RankingTable.*;
-import com.peterpl.league.methods.*;
 
 public class FinalRanking extends GamePanel {
 	private static final long serialVersionUID = 1L;

@@ -6,7 +6,6 @@ import com.peterpl.league.files.*;
 import com.peterpl.league.game.*;
 import com.peterpl.league.game.knockout.*;
 import com.peterpl.league.game.rounds.*;
-import com.peterpl.league.methods.*;
 
 public class League {
 	public static final String title = "League";
@@ -104,7 +103,7 @@ public class League {
 
 //				menuFrame.startEvent();
 //				createFrame.setNameText("WIKTOR LEAGUE 2023");
-//				createFrame.optionsCreate.setNamesMode(0);
+//				createFrame.optionsCreate.setNamesMode(1);
 //				createFrame.optionsCreate.setThirdPlaceMatch(true);
 //				createFrame.hostCreate.setHostSelect(0);
 //
