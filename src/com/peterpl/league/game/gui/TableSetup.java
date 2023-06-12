@@ -119,7 +119,7 @@ public class TableSetup extends JPanel {
 
 			teams[i] = new JTextField();
 			teams[i].setSize(textWidth - 26, textHeight);
-			teams[i].setLocation(Game.centerX(teams[i], this), 78 + i * textMargin);
+			teams[i].setLocation(Methods.centerX(teams[i], this), 78 + i * textMargin);
 			teams[i].setFont(new Font("Verdana", Font.PLAIN, textFontSize));
 			teams[i].setMargin(new Insets(0, 7, 0, 0));
 			teams[i].setBackground(Color.white);
@@ -128,14 +128,14 @@ public class TableSetup extends JPanel {
 		
 		for(int i = 0; i < flagsTeams.length; i++) {
 			flagsTeams[i] = new FlagTextField(textWidth, textHeight);
-			flagsTeams[i].setLocation(Game.centerX(flagsTeams[i], this), 78 + i * textMargin);
+			flagsTeams[i].setLocation(Methods.centerX(flagsTeams[i], this), 78 + i * textMargin);
 			flagsTeams[i].text.setFont(new Font("Verdana", Font.PLAIN, textFontSize));
 			flagsTeams[i].text.setMargin(new Insets(0, 7, 0, 0));
 			if(League.flagsMode) textFields[i] = flagsTeams[i].text;
 		}
 		
 		for(int i = 0; i < textFields.length; i++)
-			Game.setFocusSwitches(textFields, i);
+			Methods.setFocusSwitches(textFields, i);
 		
 		if(League.flagsMode) {
 			for(int i = 0; i < teamsCount; i++)

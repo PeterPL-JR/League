@@ -46,7 +46,13 @@ public class GroupsHandler implements Serializable {
 	public void endRound() {
 		finished = true;
 		
-		// Do something here
+		if (League.extraTable) {
+			League.extraTeams = new Team[League.groupsCount];
+			for (int i = 0; i < League.groupsCount; i++) {
+				League.extraTeams[i] = new Team(League.extraPlacesTable.table.getTeam(i));
+			}
+		}
+		
 		for (int i = 0; i < League.groupsCount; i++)
 			League.groupsTeams[i] = League.groupRound[i].getTeams();
 		
@@ -84,7 +90,6 @@ public class GroupsHandler implements Serializable {
 		}
 	}
 
-	// TO PRIVATE
 	public void endMatch() {
 		try {
 			scoreMatch();

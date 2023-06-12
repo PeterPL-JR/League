@@ -31,11 +31,11 @@ public class GroupRound extends GamePanel {
 	
 	private void create() {
 		group = new RankingTable(4);
-		group.setLocation(Game.centerX(group, this), groupPosX);
+		group.setLocation(Methods.centerX(group, this), groupPosX);
 		add(group);
 		
 		matchesTable = new MatchesTable(this);
-		matchesTable.setLocation(Game.centerX(matchesTable, this), matchesPosX);
+		matchesTable.setLocation(Methods.centerX(matchesTable, this), matchesPosX);
 		add(matchesTable);
 		
 		leftEvent = () -> { League.gameFrame.setGroup(League.gameFrame.activeGroup - 1); };

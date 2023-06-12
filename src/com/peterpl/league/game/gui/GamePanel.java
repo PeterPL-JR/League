@@ -29,7 +29,7 @@ public abstract class GamePanel extends JPanel {
 		add(logo);
 
 		button = new Buttons("OK");
-		button.setLocation(Game.centerX(button, this), height - 120);
+		button.setLocation(Methods.centerX(button, this), height - 120);
 		button.setVisible(false);
 		add(button);
 

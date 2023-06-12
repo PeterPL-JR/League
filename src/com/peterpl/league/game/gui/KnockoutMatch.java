@@ -215,8 +215,8 @@ public class KnockoutMatch extends JPanel {
 			add(penalty[i]);
 		}
 		
-		penalty[0].setLocation(BasicWidth / 2 - 55 - 35, Game.centerY(penalty[0], this) - 2);
-		penalty[1].setLocation(BasicWidth / 2 + 55, Game.centerY(penalty[1], this) - 2);
+		penalty[0].setLocation(BasicWidth / 2 - 55 - 35, Methods.centerY(penalty[0], this) - 2);
+		penalty[1].setLocation(BasicWidth / 2 + 55, Methods.centerY(penalty[1], this) - 2);
 		
 		penalty[0].setRightEvent(penalty[1]);
 		penalty[1].setLeftEvent(penalty[0]);
@@ -256,8 +256,8 @@ public class KnockoutMatch extends JPanel {
 		int flag1X = teamSize - flagWidth;
 		int flag2X = BasicWidth - teamSize + (flagWidth - FlagTextField.FlagWidth);
 		
-		flagLabels[0].setLocation(flag1X, Game.centerY(flagLabels[0], this));
-		flagLabels[1].setLocation(flag2X, Game.centerY(flagLabels[1], this));
+		flagLabels[0].setLocation(flag1X, Methods.centerY(flagLabels[0], this));
+		flagLabels[1].setLocation(flag2X, Methods.centerY(flagLabels[1], this));
 	}
 	
 	// CREATE 'TEAMS LABELS'
@@ -307,8 +307,8 @@ public class KnockoutMatch extends JPanel {
 			add(score[i]);
 		}
 
-		score[0].setLocation(teamSize + 13, Game.centerY(score[0], this));
-		score[1].setLocation(BasicWidth - teamSize - 13 - ScoreSquare.Size, Game.centerY(score[1], this));
+		score[0].setLocation(teamSize + 13, Methods.centerY(score[0], this));
+		score[1].setLocation(BasicWidth - teamSize - 13 - ScoreSquare.Size, Methods.centerY(score[1], this));
 
 		score[0].setRightEvent(score[1]);
 		score[1].setLeftEvent(score[0]);

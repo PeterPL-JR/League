@@ -5,7 +5,6 @@ import java.util.*;
 import javax.swing.*;
 
 import com.peterpl.league.files.*;
-import com.peterpl.league.methods.*;
 
 public class FlagTeam {
 	public static ArrayList<FlagTeam> flags = new ArrayList<>();
@@ -51,15 +50,6 @@ public class FlagTeam {
 		}
 		return new FlagTeam(flag.getScaledImage(width, height, size), names, landName);
 	}
-	
-	public static FlagTeam getCountry(String name) {
-		for(FlagTeam bufferTeam : flags) {
-			if(Game.indexOf(bufferTeam.names, League.countriesFile.encodeString(name)) != -1) {
-				return bufferTeam;
-			}
-		}
-		return null;
-	}
 
 	public static boolean findCountry(String string, FlagTeam team, JLabel label, JPanel panel,
 			ArrayList<FlagTeam> flags) {
@@ -92,15 +82,6 @@ public class FlagTeam {
 		}
 		label.setIcon(GraphicsImage.defaultFlag);
 		return false;
-	}
-	
-	public static String getLand(String team) {
-		for(FlagTeam flagTeam : FlagTeam.flags) {
-			if(Game.indexOf(flagTeam.names, League.countriesFile.encodeString(team)) != -1) {
-				return flagTeam.landName;
-			}
-		}
-		return null;
 	}
 
 	public static ArrayList<FlagTeam> getAllScaledFlags(int width, int height, boolean exceptions) {

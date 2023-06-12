@@ -24,7 +24,7 @@ public class OptionsCreatePanel extends JPanel {
 		setLayout(null);
 		setSize(CreateFrame.Width / 2, 200);
 		createOptions();
-		Game.alignRight(this);
+		Methods.alignRight(this);
 	}
 
 	private void createOptions() {

@@ -32,42 +32,9 @@ public class PotsMenu extends GamePanel implements Serializable {
 		rightEvent = () -> {
 			League.setupFrame.setGroups();
 		};
-
-		String euVictory = "Szkocja";
-		String playOff1 = "Peru";
-		String playOff2 = "Kostaryka";
-		
-		 //*
-		 String[] teams = {
-		 	"Włochy", "Brazylia", "Belgia", "Francja",
-		 	"Argentyna", "Anglia", "Hiszpania", "Portugalia",
-			
-		 	"Meksyk", "Holandia", "Dania", "Niemcy", 
-		 	"Urugwaj", "Szwajcaria", "Stany Zjednoczone", "Chorwacja",
-			
-		 	"Senegal", "Iran", "Japonia", "Maroko", 
-		 	"Serbia", "Polska", "Korea Południowa", "Tunezja",
-			
-		 	"Kamerun", "Kanada", "Ekwador", "Arabia Saudyjska", 
-		 	"Ghana", euVictory, playOff1, playOff2
-		 };
-
-		 String[][] pots = new String[League.teamsInGroup][League.groupsCount];
-		 for (int i = 0; i < pots.length; i++) {
-		 	for (int j = 0; j < pots[i].length; j++) {
-		 		pots[i][j] = teams[j + i * pots[i].length];
-		 	}
-		 }
-
-		 for (int i = 0; i < League.teamsInGroup; i++) {
-		 	this.pots[i].setText(pots[i]);
-		 	this.pots[i].setTextEvents(this);
-		 }
-		 // */
 	}
 
-	// TO PRIVATE
-	public void buttonEvent() {
+	private void buttonEvent() {
 
 		String[][] teamsNames = new String[League.teamsInGroup][League.groupsCount];
 		String[] allTeams = new String[League.teamsInGroup * League.groupsCount];
@@ -77,7 +44,7 @@ public class PotsMenu extends GamePanel implements Serializable {
 			for (int j = 0; j < League.groupsCount; j++) {
 				
 				teamsNames[i][j] = potNames[j];
-				if (Game.isStringEmpty(teamsNames[i][j]))
+				if (Methods.isStringEmpty(teamsNames[i][j]))
 					return;
 			}
 		}
@@ -88,7 +55,7 @@ public class PotsMenu extends GamePanel implements Serializable {
 			}
 		}
 
-		if (!Game.isArrayUnique(allTeams))
+		if (!Methods.isArrayUnique(allTeams))
 			return;
 		
 		if(League.flagsMode) {

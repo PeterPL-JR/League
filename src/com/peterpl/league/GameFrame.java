@@ -54,4 +54,8 @@ public class GameFrame extends JFrame {
 	public void setPanelNext(GamePanel panel) {
 		panel.rightArrow.requestFocusInWindow();
 	}
+	
+	public void setTitle(String leagueName) {
+		super.setTitle(League.title + " (" + leagueName + ")");
+	}
 }

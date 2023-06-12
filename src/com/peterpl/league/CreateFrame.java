@@ -59,13 +59,13 @@ public class CreateFrame extends JFrame {
 		nameLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		nameLabel.setFont(new Font("Verdana", Font.PLAIN, 22));
 		nameLabel.setSize(350, 35);
-		nameLabel.setLocation(Game.centerX(nameLabel, namePanel), 0);
+		nameLabel.setLocation(Methods.centerX(nameLabel, namePanel), 0);
 		namePanel.add(nameLabel);
 
 		// League Name Text
 		name = new TextFieldString("Enter a name");
 		name.setSize(415, 50);
-		name.setLocation(Game.centerX(name, namePanel), 42);
+		name.setLocation(Methods.centerX(name, namePanel), 42);
 		namePanel.add(name);
 	}
 
@@ -112,8 +112,7 @@ public class CreateFrame extends JFrame {
 		LoadLeagueHandler.loadLeague(leagueFile);
 	}
 
-	// to PRIVATE
-	public void buttonEvent() {
+	private void buttonEvent() {
 		if (!League.createGame.getLeagueValues())
 			return;
 		League.createGame.createGameValues();

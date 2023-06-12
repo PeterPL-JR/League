@@ -41,7 +41,7 @@ public abstract class Knockout extends GamePanel {
 		matches = new KnockoutMatch[matchesCount];
 		for (int i = 0; i < matchesCount; i++) {
 			matches[i] = new KnockoutMatch(this, matchHeight, matchFontSize, flagWidth, flagHeight);
-			matches[i].setLocation(Game.centerX(matches[i], this), 120 + i * (int) (matches[i].getHeight() * 1.15));
+			matches[i].setLocation(Methods.centerX(matches[i], this), 120 + i * (int) (matches[i].getHeight() * 1.15));
 			add(matches[i]);
 		}
 
@@ -96,14 +96,17 @@ public abstract class Knockout extends GamePanel {
 		}
 	}
 	
+	public void setMatch(int index, Match match) {
+		matches[index].setTeam(0, match.team1);
+		matches[index].setTeam(1, match.team2);
+		
+		matches[index].setScore(match.getScore1(), match.getScore2());
+	}
 	public void setMatches(Match[] matches) {
 		if(matches.length != matchesCount) return;
 		
 		for(int i = 0; i < matchesCount; i++) {
-			this.matches[i].setTeam(0, matches[i].team1);
-			this.matches[i].setTeam(1, matches[i].team2);
-			
-			this.matches[i].setScore(matches[i].getScore1(), matches[i].getScore2());
+			setMatch(i, matches[i]);
 		}
 	}
 
@@ -114,15 +117,7 @@ public abstract class Knockout extends GamePanel {
 	
 	public void endRound() {
 		rightArrow.requestFocusInWindow();
-		
-		Events event = rightEvent;
-		rightEvent = () -> {
-			event.event();
-			if(nextRound != null) {
-				nextRound.setMatchFocus(0);
-			}
-		};
-		
+
 		for(int i = 0; i < League.knockoutMatches.length; i++) {
 			if(League.knockoutMatches[i] == null) {
 				League.knockoutMatches[i] = new Match[matchesCount];

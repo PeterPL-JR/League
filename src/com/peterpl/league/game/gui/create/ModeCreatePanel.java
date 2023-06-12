@@ -32,7 +32,7 @@ public class ModeCreatePanel extends JPanel {
 		setLayout(null);
 		setSize(CreateFrame.Width / 2, 200);
 		createMode();
-		Game.alignRight(this);
+		Methods.alignRight(this);
 	}
 	
 	private void createMode() {

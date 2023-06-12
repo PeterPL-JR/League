@@ -60,7 +60,7 @@ public class MenuFrame extends JFrame {
 			buttons[i].setLocation(194, 167 + i * 62);
 			add(buttons[i]);
 			
-			Game.setFocusSwitches(buttons, i);
+			Methods.setFocusSwitches(buttons, i);
 		}
 		
 		buttons[0].setAction(this::startEvent);
@@ -68,8 +68,7 @@ public class MenuFrame extends JFrame {
 		buttons[2].setAction(this::quitEvent);
 	}
 	
-	// TO PRIVATE 
-	public void startEvent() {
+	private void startEvent() {
 		League.menuFrame.setVisible(false);
 		League.createFrame.setVisible(true);
 	}

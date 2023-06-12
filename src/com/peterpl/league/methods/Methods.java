@@ -4,13 +4,12 @@ import static com.peterpl.league.League.*;
 
 import java.awt.*;
 import java.awt.event.*;
-import java.util.*;
 
 import javax.swing.*;
 
 import com.peterpl.league.game.gui.*;
 
-public interface Game {
+public interface Methods {
 
 	public static boolean isStringEmpty(String string) {
 		boolean empty = true;
@@ -49,30 +48,6 @@ public interface Game {
 			}
 		}
 		return -1;
-	}
-	
-	public static String[] shuffleArray(String[] array) {
-		ArrayList<String> list = new ArrayList<>();
-		ArrayList<String> newList = new ArrayList<>();
-		
-		for(String elem : array) list.add(elem);
-		Random random = new Random();
-		
-		int counter = 0;
-		while(counter < array.length) {
-			int randIndex = random.nextInt(list.size());
-			
-			newList.add(list.get(randIndex));
-			list.remove(randIndex);
-			
-			counter++;
-		}
-		
-		String[] newArray = new String[newList.size()];
-		for(int i = 0; i < newList.size(); i++) {
-			newArray[i] = newList.get(i);
-		}
-		return newArray;
 	}
 
 	public static void setFocusSwitches(JComponent[] objects, int index) {

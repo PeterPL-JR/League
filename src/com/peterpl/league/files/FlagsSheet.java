@@ -9,7 +9,6 @@ import com.peterpl.league.*;
 public class FlagsSheet {
 	private ArrayList<GraphicsImage> images;
 	private ArrayList<String[]> langNames;
-	public static final String[] landsNames = {"europe", "south_america", "oceania", "north_america", "africa", "asia"};
 
 	private int width, height;
 	private String landName;

@@ -99,8 +99,9 @@ public class LoadFrame extends JFrame {
 
 			String leagueName = files[i].leagueName;
 			String teamsCount = " (" + files[i].teamsCount + ")";
-
-			filePanels[i].name.setText(leagueName + teamsCount);
+			String flagsMode = files[i].flagsMode ? "(N) " : "";
+			
+			filePanels[i].name.setText(flagsMode + leagueName + teamsCount);
 			filePanels[i].date.setText(files[i].dateText);
 		}
 
@@ -126,7 +127,7 @@ public class LoadFrame extends JFrame {
 		add(altLabel, 0);
 
 		button = new Buttons("OK");
-		button.setLocation(Game.centerX(button, this), getHeight() - 120);
+		button.setLocation(Methods.centerX(button, this), getHeight() - 120);
 		button.setAction((mode == "load") ? this::loadButtonEvent : this::chooseButtonEvent);
 		add(button, 0);
 	}
@@ -163,7 +164,7 @@ public class LoadFrame extends JFrame {
 
 		parentFrame.setEnabled(true);
 		dispose();
-		
+
 		if (checkedIndex != -1) {
 			League.filesHandler.exportFile(files[checkedIndex]);
 		}
@@ -237,7 +238,7 @@ public class LoadFrame extends JFrame {
 			add(date);
 
 			delete = new JLabel(GraphicsImage.delete);
-			delete.setBounds(280, 0, 50, 50);
+			delete.setBounds(297, 0, 50, 50);
 			delete.setVisible(false);
 			add(delete);
 

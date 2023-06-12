@@ -13,7 +13,7 @@ public class League {
 	public static String leagueName;
 	public static String gameMode;
 	public static int gameModeInt;
-	
+
 	public static int hostsCount;
 	public static boolean thirdPlace;
 	public static boolean extraTable;
@@ -64,17 +64,17 @@ public class League {
 	public static TableHandler handlingGroups = new TableHandler();
 	public static ScoresDrawHandler drawingScores = new ScoresDrawHandler();
 	public static KnockoutCreateHandler createKnockout;
-	
+
 	public static LeagueFileHandler leagueFile = new LeagueFileHandler();
 	public static CountriesFileHandler countriesFile = new CountriesFileHandler();
 	public static FilesHandler filesHandler = new FilesHandler();
 
 	public static void initGroupsRound() {
-		
+
 		// Tables of Teams Names
 		potsTeamsNames = new String[teamsInGroup][groupsCount];
 		groupsTeamsNames = new String[groupsCount][teamsInGroup];
-		
+
 		// Tables of "Team" Objects
 		groupsTeams = new Team[groupsCount][];
 		allTeams = new Team[groupsCount][teamsInGroup];
@@ -83,46 +83,23 @@ public class League {
 	}
 
 	public static void initKnockoutRound() {
-		
+
 		secondRound = new SecondRound();
 		quarterFinals = new QuarterFinals();
 		semiFinals = new SemiFinals();
 		thirdPlaceMatch = new ThirdPlaceMatch();
 		finalMatch = new Final();
-		
+
 		knockout = new Knockout[knockoutRounds];
 		knockoutMatches = new Match[knockoutRounds][];
 		ranking = new FinalRanking();
 	}
-	
+
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				FlagsSheet.loadFlagsSheets();
 				menuFrame.setVisible(true);
-
-//				menuFrame.startEvent();
-//				createFrame.setNameText("WIKTOR LEAGUE 2023");
-//				createFrame.optionsCreate.setNamesMode(1);
-//				createFrame.optionsCreate.setThirdPlaceMatch(true);
-//				createFrame.hostCreate.setHostSelect(0);
-//
-//				createFrame.modeCreate.setTeamsMode(3);
-//				createFrame.modeCreate.setKnockoutMode(1);
-//				createFrame.buttonEvent();
-//				
-//				pots.buttonEvent();
-//				groups.drawEvent();
-//				groups.buttonEvent();
-//				League.drawingScores.createScores(groupRound);
-//				
-//				League.drawingScores.createScores(secondRound);
-//				League.drawingScores.createScores(quarterFinals);
-//				League.drawingScores.createScores(semiFinals);
-//				League.drawingScores.createScores(thirdPlaceMatch);
-//				League.drawingScores.createScores(finalMatch);
-//				
-//				League.gameFrame.setContentPane(League.finalMatch);
 			}
 		});
 	}

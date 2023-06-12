@@ -73,6 +73,11 @@ public class RankingTable extends Table {
 
 		rankingParts[index].setTeam(team);
 	}
+	public void setTeams(Team[] teams) {
+		for(int i = 0; i < teams.length; i++) {
+			setTeam(i, teams[i]);
+		}
+	}
 
 	public Team getTeam(int index) {
 		if (index < 0 || index >= teamsCount)
@@ -161,7 +166,7 @@ public class RankingTable extends Table {
 			
 			flagLabel = new JLabel();
 			flagLabel.setSize(FlagWidth, FlagHeight);
-			flagLabel.setLocation(15, Game.centerY(flagLabel, part));
+			flagLabel.setLocation(15, Methods.centerY(flagLabel, part));
 			part.add(flagLabel);
 			
 			team = new JLabel();
@@ -178,7 +183,7 @@ public class RankingTable extends Table {
 			team = new JLabel();
 			team.setFont(new Font("Verdana", 0, 14));
 			team.setSize(part.getWidth() - 60, 30);
-			team.setLocation(Game.centerX(team, part), Game.centerY(team, part));
+			team.setLocation(Methods.centerX(team, part), Methods.centerY(team, part));
 			team.setBorder(new LineBorder(Color.gray));
 			team.setOpaque(true);
 			part.add(team);

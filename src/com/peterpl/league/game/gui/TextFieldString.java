@@ -41,7 +41,7 @@ public class TextFieldString extends JPanel {
 			}
 
 			public void focusLost(FocusEvent e) {
-				if(Game.isStringEmpty(text.getText())) {
+				if(Methods.isStringEmpty(text.getText())) {
 					if(text.isEditable()) {
 						label.setVisible(true);
 					}
@@ -65,21 +65,21 @@ public class TextFieldString extends JPanel {
 	
 	public void setEditable(boolean editable) {
 		text.setEditable(editable);
-		if(!Game.isStringEmpty(text.getText())) {
+		if(!Methods.isStringEmpty(text.getText())) {
 			label.setVisible(false);
 		}
 	}
 
 	public void setVisible(boolean visible) {
 		super.setVisible(visible);
-		label.setVisible(Game.isStringEmpty(text.getText()));
+		label.setVisible(Methods.isStringEmpty(text.getText()));
 	}
 	
 	public void setActive(boolean active) {
 		if(text.isEditable()) {
 			label.setVisible(active);
 		}
-		if(!Game.isStringEmpty(text.getText())) {
+		if(!Methods.isStringEmpty(text.getText())) {
 			label.setVisible(false);
 		}
 	}

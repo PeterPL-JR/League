@@ -204,7 +204,7 @@ public class MatchesTable extends JPanel {
 				
 				flagLabels[i] = new JLabel();
 				flagLabels[i].setSize(FlagWidth, FlagHeight);
-				flagLabels[i].setLocation(200 + 150 * i, Game.centerY(flagLabels[i], this) + 1);
+				flagLabels[i].setLocation(200 + 150 * i, Methods.centerY(flagLabels[i], this) + 1);
 				add(flagLabels[i]);
 			}
 			

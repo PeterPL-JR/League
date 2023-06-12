@@ -14,7 +14,7 @@ public class ExtraPlaces extends GamePanel {
 		super(createExtraName(), Header.Basic, GameFrame.Width, GameFrame.Height);
 		
 		table = new RankingTable(League.groupsCount);
-		table.setLocation(Game.centerX(table, this), 120);
+		table.setLocation(Methods.centerX(table, this), 120);
 		table.setSize(table.getWidth(), League.groupsCount * 49 + 50);
 		add(table);
 

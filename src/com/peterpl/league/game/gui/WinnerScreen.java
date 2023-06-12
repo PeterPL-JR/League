@@ -33,7 +33,7 @@ public class WinnerScreen extends JPanel {
 		
 		title = new JLabel("Winner");
 		title.setSize(268, 52);
-		title.setLocation(Game.centerX(title, this), 0);
+		title.setLocation(Methods.centerX(title, this), 0);
 		title.setBackground(new Color(230, 230, 230));
 		
 		title.setForeground(Color.DARK_GRAY);
@@ -49,7 +49,7 @@ public class WinnerScreen extends JPanel {
 	private void create() {
 		cup = new JLabel(GraphicsImage.cup);
 		cup.setSize(185, 185);
-		cup.setLocation(Game.centerX(cup, this), 66);
+		cup.setLocation(Methods.centerX(cup, this), 66);
 		add(cup);
 		
 		winner = new JPanel();

@@ -1,15 +1,2 @@
 Version Name: Alpha 1.2
 Date of Version: ?
-
-!!!--- 	CHANGES TO MAKE ---!!!
-
-[Nowości do zrobienia]
--> Konwersja starych plików gry do nowych wersji
--> Stworzyć nowy mechanizm importu plików gry
--> poprawić sortowanie plików gry
-? Ustalanie miejsca w grupie, gdy statystyki są takie same
-
-[Błędy do naprawienia]
--> PRZYWRÓCIĆ ZAPISYWANIE PLIKÓW W FINAL
--> focus ustawia się na obecny mecz po wejsciu z poprzedniej rundy!
--> w trybie 12t robi się stack overflow

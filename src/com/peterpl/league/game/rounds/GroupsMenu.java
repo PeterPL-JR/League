@@ -45,8 +45,11 @@ public class GroupsMenu extends GamePanel implements Serializable {
 		}
 	}
 
-	// TO PRIVATE
-	public void buttonEvent() {
+	private void buttonEvent() {
+		
+		// Create Frames & Panels
+		League.gameFrame = new GameFrame();
+		League.gameFrame.setTitle(League.leagueName);
 		
 		League.createGame.createGroupsRound();
 		League.groupsHandler = new GroupsHandler(League.groupRound, League.allTeams);
@@ -60,7 +63,7 @@ public class GroupsMenu extends GamePanel implements Serializable {
 			for (int j = 0; j < League.teamsInGroup; j++) {
 				
 				teamsNames[i][j] = groupNames[j];
-				if(Game.isStringEmpty(teamsNames[i][j])) return;
+				if(Methods.isStringEmpty(teamsNames[i][j])) return;
 			}
 		}
 		
@@ -70,7 +73,7 @@ public class GroupsMenu extends GamePanel implements Serializable {
 			}
 		}
 
-		if(!Game.isArrayUnique(allTeams))
+		if(!Methods.isArrayUnique(allTeams))
 			return;
 
 		int[][] potsNumbers = new int[League.groupsCount][League.teamsInGroup];
@@ -81,7 +84,7 @@ public class GroupsMenu extends GamePanel implements Serializable {
 
 				for(int p = 0; p < League.teamsInGroup; p++) {
 					String[] potArray = League.potsTeamsNames[p];
-					if(Game.indexOf(potArray, team) != -1) {
+					if(Methods.indexOf(potArray, team) != -1) {
 						potsNumbers[i][j] = p;
 						break;
 					}
@@ -110,8 +113,7 @@ public class GroupsMenu extends GamePanel implements Serializable {
 		League.groupRound[League.groupsCount - 1].rightArrow.setVisible(true);
 	}
 
-	// TO PRIVATE
-	public void drawEvent() {	
+	private void drawEvent() {	
 		League.drawing.draw(League.potsTeamsNames, League.groupsTeamsNames);
 
 		for (int i = 0; i < League.allTeams.length; i++)

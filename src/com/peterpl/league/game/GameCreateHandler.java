@@ -18,8 +18,7 @@ public class GameCreateHandler {
 	private int knockTeamsInt;
 
 	private int teamsModeInt;
-	private boolean thirdPlace;
-
+	
 	public GameCreateHandler(CreateFrame frame) {
 		this.frame = frame;
 	}
@@ -28,7 +27,7 @@ public class GameCreateHandler {
 
 		// League Name
 		leagueName = frame.getNameText();
-		if (Game.isStringEmpty(leagueName))
+		if (Methods.isStringEmpty(leagueName))
 			return false;
 
 		// Hosts Names
@@ -38,7 +37,7 @@ public class GameCreateHandler {
 		String[] names = frame.hostCreate.getHostNames();
 		for (int i = 0; i < hostsCount; i++) {
 			hostNames[i] = names[i];
-			if (Game.isStringEmpty(hostNames[i]))
+			if (Methods.isStringEmpty(hostNames[i]))
 				return false;
 		}
 
@@ -51,7 +50,7 @@ public class GameCreateHandler {
 
 		// Teams Modes
 		teamsModeInt = frame.optionsCreate.getTeamsSelect();
-		thirdPlace = frame.optionsCreate.getThirdPlacesSelect();
+		League.thirdPlace = frame.optionsCreate.getThirdPlacesSelect();
 		return true;
 	}
 
@@ -77,10 +76,9 @@ public class GameCreateHandler {
 		int knockoutRounds = 0;
 		for (int i = 2; i <= League.teamsInKnockout; i *= 2)
 			knockoutRounds++;
-		if (thirdPlace)
+		if (League.thirdPlace)
 			knockoutRounds++;
 
-		League.thirdPlace = thirdPlace;
 		League.knockoutRounds = knockoutRounds;
 		League.flagsMode = (teamsModeInt == 0) ? false : true;
 	}
@@ -108,19 +106,19 @@ public class GameCreateHandler {
 
 		// Handle Tables on the Panels
 		if (gameMode.equals("Teams32") || gameMode.equals("Teams24")) {
-			Game.setTablesPos(pots.pots, 0);
-			Game.setTablesPos(groups.groups, 1);
+			Methods.setTablesPos(pots.pots, 0);
+			Methods.setTablesPos(groups.groups, 1);
 		}
 
 		if (gameMode.equals("Teams16") || gameMode.equals("Teams12")) {
-			Game.setTablesPos(pots.pots, 1);
+			Methods.setTablesPos(pots.pots, 1);
 		}
 
 		if (gameMode.equals("Teams16"))
-			Game.setTablesPos(groups.groups, 1);
+			Methods.setTablesPos(groups.groups, 1);
 
 		if (gameMode.equals("Teams12"))
-			Game.setTablesPos(groups.groups, 0);
+			Methods.setTablesPos(groups.groups, 0);
 
 		// Create Host in Tables
 		for (int i = 0; i < League.hostsCount; i++) {
@@ -136,10 +134,6 @@ public class GameCreateHandler {
 	}
 
 	public void createGroupsRound() {
-
-		// Create Frames & Panels
-		League.gameFrame = new GameFrame();
-		League.gameFrame.setTitle(League.title + " (" + League.leagueName + ")");
 
 		League.groupRound = new GroupRound[groupsCount];
 		for (int i = 0; i < League.groupRound.length; i++)
@@ -190,7 +184,7 @@ public class GameCreateHandler {
 		League.allKnockoutRounds = allKnockoutRounds;
 
 		for (int i = 0; i < knockoutRounds; i++)
-			knockout[i] = (thirdPlace) ? thirdKnockoutRounds[i] : allKnockoutRounds[i];
+			knockout[i] = (League.thirdPlace) ? thirdKnockoutRounds[i] : allKnockoutRounds[i];
 
 		for (int i = 1; i < knockoutRounds; i++) {
 			knockout[i].setNextRound(knockout[i - 1]);

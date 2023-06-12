@@ -58,10 +58,10 @@ public class SetupGroup extends JPanel {
 		for(int i = 0; i < teams.length; i++) {
 			teams[i] = new JTextField();
 			teams[i].setSize(116, 24);
-			teams[i].setLocation(Game.centerX(teams[i], this), 72 + i * 31);
+			teams[i].setLocation(Methods.centerX(teams[i], this), 72 + i * 31);
 			add(teams[i]);
 			
-			Game.setFocusSwitches(teams, i);
+			Methods.setFocusSwitches(teams, i);
 		}
 	}
 }

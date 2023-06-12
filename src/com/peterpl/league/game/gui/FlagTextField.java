@@ -30,7 +30,7 @@ public class FlagTextField extends JPanel {
 		// Flag Label
 		flagLabel = new JLabel();
 		flagLabel.setSize(FlagWidth, FlagHeight);
-		flagLabel.setLocation(0, Game.centerY(flagLabel, this));
+		flagLabel.setLocation(0, Methods.centerY(flagLabel, this));
 		flagLabel.setIcon(GraphicsImage.defaultFlag);
 		add(flagLabel);
 
