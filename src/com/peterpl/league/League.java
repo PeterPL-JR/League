@@ -18,6 +18,7 @@ public class League {
 	public static boolean thirdPlace;
 	public static boolean extraTable;
 	public static boolean flagsMode;
+	public static boolean potsMode;
 
 	public static MenuFrame menuFrame = new MenuFrame();
 	public static CreateFrame createFrame = new CreateFrame();

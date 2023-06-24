@@ -77,16 +77,18 @@ public class GroupsMenu extends GamePanel implements Serializable {
 			return;
 
 		int[][] potsNumbers = new int[League.groupsCount][League.teamsInGroup];
-		for(int i = 0; i < League.groupsCount; i++) {
-			for(int j = 0; j < League.teamsInGroup; j++) {
-				String team = League.groupsTeamsNames[i][j];
-				
+		if(League.potsMode) {
+			for(int i = 0; i < League.groupsCount; i++) {
+				for(int j = 0; j < League.teamsInGroup; j++) {
+					String team = League.groupsTeamsNames[i][j];
+					
 
-				for(int p = 0; p < League.teamsInGroup; p++) {
-					String[] potArray = League.potsTeamsNames[p];
-					if(Methods.indexOf(potArray, team) != -1) {
-						potsNumbers[i][j] = p;
-						break;
+					for(int p = 0; p < League.teamsInGroup; p++) {
+						String[] potArray = League.potsTeamsNames[p];
+						if(Methods.indexOf(potArray, team) != -1) {
+							potsNumbers[i][j] = p;
+							break;
+						}
 					}
 				}
 			}
@@ -94,8 +96,9 @@ public class GroupsMenu extends GamePanel implements Serializable {
 
 		for (int i = 0; i < League.groupsCount; i++) {
 			for (int j = 0; j < League.teamsInGroup; j++) {
+				int pot = League.potsMode ? potsNumbers[i][j] : 0;
 
-				Team team = new Team(teamsNames[i][j], i, potsNumbers[i][j]);
+				Team team = new Team(teamsNames[i][j], i, pot);
 				
 				League.allTeams[i][j] = team;
 				League.groupRound[i].group.setTeam(j, team);

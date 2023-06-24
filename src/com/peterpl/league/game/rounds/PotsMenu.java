@@ -15,6 +15,7 @@ public class PotsMenu extends GamePanel implements Serializable {
 
 	public PotsMenu(int width, int height) {
 		super("Teams", Header.Basic, width, height);
+		League.potsMode = false;
 
 		pots = new TableSetup[League.teamsInGroup];
 		for (int i = 0; i < pots.length; i++) {
@@ -35,6 +36,7 @@ public class PotsMenu extends GamePanel implements Serializable {
 	}
 
 	private void buttonEvent() {
+		League.potsMode = true;
 
 		String[][] teamsNames = new String[League.teamsInGroup][League.groupsCount];
 		String[] allTeams = new String[League.teamsInGroup * League.groupsCount];

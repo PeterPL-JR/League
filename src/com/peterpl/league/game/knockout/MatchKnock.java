@@ -60,8 +60,13 @@ public class MatchKnock {
 	public void sortGroups() {
 		if(groups[0] > groups[1]) {
 			char buffer = groups[0];
+			int bufferInt = groupsInt[0];
+			
 			groups[0] = groups[1];
+			groupsInt[0] = groupsInt[1];
+			
 			groups[1] = buffer;
+			groupsInt[1] = bufferInt;
 		}
 	}
 	
